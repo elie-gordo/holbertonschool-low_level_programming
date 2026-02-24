@@ -1,37 +1,37 @@
 # holbertonschool-low_level_programming
 
-Ce depot contient mes projets C bas niveau. Pour l instant:
-- `hello_world`
-- `variables_if_else_while`
+Depuis le debut, ce repo a servi a construire des bases solides en C avec une methode stricte: lire l enonce, coder exactement ce qui est demande, compiler, tester, corriger, puis versionner.
 
-## Workflow utilise sur les exercices
+## Ce qu on a fait
 
-1. Lire l enonce strictement.
-2. Creer/modifier uniquement le fichier demande.
-3. Compiler avec les flags imposes.
-4. Tester la sortie.
-5. Verifier Betty et Betty-doc.
-6. Commit puis push.
+- Projet `hello_world`:
+  - decouverte de la chaine de compilation (preprocess, compile, assemble, link)
+  - premiers programmes C avec affichage (`puts`, `printf`)
+  - observation des tailles de types avec `sizeof`
 
-## Commandes de travail utilisees
+- Projet `variables_if_else_while`:
+  - pratique des conditions (`if`, `else if`, `else`)
+  - pratique des boucles (`for`)
+  - affichages controles avec `putchar` et `printf`
+  - respect de contraintes strictes (fonctions autorisees, format de sortie exact)
 
-```bash
-# exploration
-ls -la
-rg --files
-sed -n '1,200p' <fichier>
+- Projet `functions_nested_loops`:
+  - creation de fonctions avec prototypes et fichier header `main.h`
+  - pratique des boucles imbriquees (`while` dans `while`)
+  - sorties formatees strictes (`times_table`, `jack_bauer`, `print_to_98`)
+  - verification constante de la compilation et du style Betty
 
-# compilation/test
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <fichier>.c -o /tmp/<prog>
-/tmp/<prog>
+## Pourquoi on l a fait comme ca
 
-# style
-betty <fichier>.c
-betty-doc <fichier>.c
+- pour apprendre les vraies bases avant les sujets plus avances
+- pour prendre de bonnes habitudes de rigueur des le debut
+- pour produire un code propre, testable et conforme aux consignes de l ecole
 
-# git
-git status --short
-git add <fichier>
-git commit -m "<message>"
-git push origin main
-```
+## Methode suivie
+
+1. Lire l enonce mot a mot.
+2. Ecrire une solution simple et conforme.
+3. Compiler avec des flags stricts.
+4. Verifier la sortie attendue.
+5. Verifier le style (`betty`, `betty-doc`).
+6. Commit apres chaque exercice.
