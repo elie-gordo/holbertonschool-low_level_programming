@@ -40,13 +40,13 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 
 ## 6) Exercices realises
 
-### Exercice 0 - `sum_to_n.c`
+### Exercice 0. Debugging a Counting Function - `sum_to_n.c`
 
 - Probleme: borne de boucle incorrecte et mauvaise valeur retournee.
 - Correction: sommer jusqu a `n` inclus puis retourner `sum`.
 - Sortie attendue: `55`
 
-### Exercice 1 - `multiplication_table.c`
+### Exercice 1. Debugging Nested Loops - `multiplication_table.c`
 
 - Probleme: incrementation supplementaire de `col` dans la boucle interne.
 - Correction: laisser la boucle `for` controler seule `col`.
@@ -56,7 +56,7 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 - `3 6 9 12 `
 - `4 8 12 16 `
 
-### Exercice 2 - `row_sums.c`
+### Exercice 2. Debugging State Across Function Calls - `row_sums.c`
 
 - Probleme: accumulation intermediaire incorrecte via `current`.
 - Correction: ajouter directement chaque `row_sum` a `total`.
