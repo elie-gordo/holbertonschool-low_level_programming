@@ -1,126 +1,142 @@
 # C - Hello, World
 
-## Introduction
+## 1) But du projet
 
-Ce dossier contient les premiers exercices pour comprendre comment un fichier C devient un programme executable.
-L objectif est d apprendre chaque etape de la chaine de compilation avec des consignes simples et strictes.
+Ce projet apprend le debut du langage C, de la preparation du code jusqu a l execution.
+On y voit le preprocesseur, la compilation, l assemblage, la creation d un executable, l affichage de texte et la taille des types.
 
-## Exercice 0 - Preprocessor
+## 2) Ressources couvertes
 
-On passe un fichier C dans le preprocesseur.
-Le fichier source est fourni via la variable `CFILE`.
-La sortie attendue est un fichier nomme `c`.
+- Everything you need to know to start with C.pdf
+- Dennis Ritchie
+- The C Programming Language (Brian Kernighan)
+- Why C Programming Is Awesome
+- Learning to program in C part 1
+- Learning to program in C part 2
+- Understanding C program Compilation Process
+- Betty Coding Style
+- man gcc
+- man 3 printf
+- man puts
+- man putchar
 
-A retenir:
-- Le preprocesseur prepare le code avant compilation.
-- Il ne produit pas encore un binaire executable.
+## 3) Objectifs appris
 
-## Exercice 1 - Compiler
+- Pourquoi C est important et performant
+- Qui est Dennis Ritchie
+- Qui sont Brian Kernighan et Linus Torvalds
+- Ce qui se passe quand on lance `gcc main.c`
+- Ce qu est le point d entree `main`
+- Comment afficher du texte avec `printf`, `puts`, `putchar`
+- Comment utiliser `sizeof`
+- Comment compiler avec `gcc`
+- Nom par defaut d un binaire (si pas de `-o`, c est `a.out`)
+- Style Betty et verification du style
+- Choix du bon header selon la fonction utilisee
+- Influence du `return` de `main` sur le code de sortie
 
-On compile un fichier C sans faire l edition de liens.
-Le resultat attendu est un fichier objet `.o`.
+## 4) Regles obligatoires
 
-A retenir:
-- Le fichier objet est une etape intermediaire.
-- Ce n est pas encore un programme executable.
+- Compilation cible: Ubuntu 20.04
+- Flags: `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- Chaque fichier finit par une nouvelle ligne
+- README obligatoire a la racine du repo et du projet
+- `system` interdit
+- Respect du style Betty
+- Scripts shell:
+- premiere ligne `#!/bin/bash`
+- exactement 2 lignes
 
-## Exercice 2 - Assembler
+## 5) Methode de travail complete
 
-On genere le code assembleur a partir du fichier C.
-Le fichier de sortie attendu se termine par `.s`.
+1. Lire l enonce mot par mot.
+2. Identifier les contraintes exactes (fonction autorisee/interdite, nom de fichier, sortie exacte).
+3. Ecrire la solution minimale.
+4. Tester localement le comportement.
+5. Compiler avec les flags imposes quand c est du C.
+6. Verifier le style avec Betty.
+7. Corriger avant de passer a l exo suivant.
+8. Commit et push a la fin de chaque exercice valide.
 
-A retenir:
-- Le fichier assembleur montre une version proche du langage machine.
-- Il aide a comprendre le bas niveau.
+## 6) Exercices realises
 
-## Exercice 3 - Name
+### Exercice 0 - `0-preprocessor`
 
-On compile pour obtenir un executable nomme exactement `cisfun`.
+- Objectif: passer `$CFILE` dans le preprocesseur et ecrire la sortie dans `c`.
+- Idee: utiliser le preprocesseur seul.
 
-A retenir:
-- Le nom de sortie impose doit etre respecte exactement.
+### Exercice 1 - `1-compiler`
 
-## Exercice 4 - Hello, puts
+- Objectif: compiler sans linker.
+- Resultat attendu: fichier objet `.o` (ex: `main.o`).
 
-On affiche une phrase precise avec `puts`.
-`printf` est interdit.
-Le programme doit retourner `0`.
+### Exercice 2 - `2-assembler`
 
-A retenir:
-- Il faut respecter les fonctions autorisees/interdites.
-- La sortie doit etre exacte caractere par caractere.
+- Objectif: generer l assembleur.
+- Resultat attendu: fichier `.s` (ex: `main.s`).
 
-## Exercice 5 - Hello, printf
+### Exercice 3 - `3-name`
 
-On affiche une phrase precise avec `printf`.
-`puts` est interdit.
-Le programme doit retourner `0`.
+- Objectif: compiler et creer un executable nomme `cisfun`.
 
-A retenir:
-- Difference pratique entre `puts` et `printf`.
-- Compiler proprement sans warnings.
+### Exercice 4 - `4-puts.c`
 
-## Exercice 6 - Size is not grandeur, and territory does not make a nation
+- Objectif: afficher exactement `"Programming is like building a multilingual puzzle`.
+- Contraintes: `puts` obligatoire, `printf` interdit, `return 0`.
 
-On affiche la taille de differents types (`char`, `int`, `long int`, `long long int`, `float`).
+### Exercice 5 - `5-printf.c`
 
-A retenir:
-- La taille des types depend de l architecture.
-- `sizeof` permet de l observer directement.
+- Objectif: afficher exactement `with proper grammar, but the outcome is a piece of art,`.
+- Contraintes: `printf` obligatoire, `puts` interdit, `return 0`, zero warning.
 
-## Fonctions et notions vues
+### Exercice 6 - `6-size.c`
 
-Fonctions:
-- `puts`
-- `printf`
-- `sizeof`
-- `main`
+- Objectif: afficher la taille de `char`, `int`, `long int`, `long long int`, `float`.
+- Point important: les tailles peuvent changer entre 32-bit et 64-bit.
 
-Notions:
-- preprocessing
-- compilation
-- assemblage
-- edition de liens
-- code retour `0`
+## 7) Commandes utilisees
 
-## Commandes utilisees
+### Verification des scripts shell
 
-```bash
-# Exercice 0
-gcc -E "$CFILE" -o c
+- `wc -l hello_world/0-preprocessor hello_world/1-compiler hello_world/2-assembler hello_world/3-name`
+- `chmod +x hello_world/0-preprocessor hello_world/1-compiler hello_world/2-assembler hello_world/3-name`
 
-# Exercice 1
-gcc -c "$CFILE" -o "${CFILE%.c}.o"
+### Compilation et execution des programmes C
 
-# Exercice 2
-gcc -S "$CFILE" -o "${CFILE%.c}.s"
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 hello_world/4-puts.c -o 4-puts`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 hello_world/5-printf.c -o 5-printf`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 hello_world/6-size.c -o 6-size`
+- `./4-puts`
+- `./5-printf`
+- `./6-size`
 
-# Exercice 3
-gcc "$CFILE" -o cisfun
+### Architecture 32/64 bits (exo 6)
 
-# Exercices 4, 5, 6
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-puts.c -o 4-puts
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-printf.c -o 5-printf
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-size.c -o 6-size
+- `gcc hello_world/6-size.c -m32 -o size32`
+- `gcc hello_world/6-size.c -m64 -o size64`
+- `./size32`
+- `./size64`
 
-./4-puts
-./5-printf
-./6-size
+### Style
 
-# Style
-betty 4-puts.c 5-printf.c 6-size.c
-betty-doc 4-puts.c 5-printf.c 6-size.c
-```
+- `betty hello_world/4-puts.c hello_world/5-printf.c hello_world/6-size.c`
+- `betty-doc hello_world/4-puts.c hello_world/5-printf.c hello_world/6-size.c`
 
-## Methode simple pour reussir
+## 8) Fonctions et procedes utilises
 
-1. Lire l enonce calmement.
-2. Respecter exactement les contraintes.
-3. Compiler et tester immediatement.
-4. Corriger avant de passer au suivant.
-5. Commit et push apres chaque exercice.
+- `cpp` pour le preprocesseur
+- `gcc` pour compiler/assembler/linker
+- `puts`, `printf`, `putchar` pour l affichage selon contraintes
+- `sizeof` pour mesurer la taille des types
+- variable d environnement `CFILE`
+- redirection shell `>`
+- statut de sortie de programme (`return 0`)
 
-## Conclusion
+## 9) Checklist finale
 
-Ce projet pose les bases essentielles du C.
-Avec une lecture stricte des consignes et des tests systematiques, la progression est propre et rapide.
+- Noms de fichiers exacts
+- Sorties exactes caractere par caractere
+- Fonctions interdites non utilisees
+- Fichiers termines par `\n`
+- Compilation conforme
+- Style conforme

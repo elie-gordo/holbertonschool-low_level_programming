@@ -1,147 +1,157 @@
 # C - Variables, if, else, while
 
-## Introduction
+## 1) But du projet
 
-Ce dossier contient les exercices pour pratiquer les variables, conditions et boucles en C.
-L objectif est d ecrire des programmes simples en respectant strictement chaque enonce.
+Ce projet apprend la logique de base en C: variables, operations, comparaisons, conditions et boucles.
+On apprend aussi a produire une sortie exacte en respectant des contraintes strictes.
 
-## Exercice 0 - Positive anything is better than negative nothing
+## 2) Ressources couvertes
 
-On complete un programme qui genere un nombre aleatoire et affiche s il est positif, nul ou negatif.
+- Everything you need to know to start with C.pdf (sections commentaires, types entiers, declaration, characters, operateurs, affectation, comparaisons, operateurs logiques, if/else, while)
+- Keywords and identifiers
+- integers
+- Arithmetic Operators in C
+- If statements in C
+- if...else statement
+- Relational operators
+- Logical operators
+- while loop in C
+- While loop
+- man ascii
 
-A retenir:
-- Une condition doit couvrir tous les cas (`> 0`, `== 0`, `< 0`).
-- Le format de sortie doit etre exact.
+## 3) Objectifs appris
 
-## Exercice 1 - The last digit
+- Operateurs arithmetiques et usage
+- Operateurs relationnels et usage
+- Operateurs logiques et usage
+- Valeurs TRUE/FALSE en C
+- Utilisation de `if` et `if...else`
+- Declaration de `char`, `int`, `unsigned int`
+- Affectation de variables
+- Affichage avec `printf` et `putchar`
+- Utilisation de `while`
+- ASCII et conversion chiffre/caractere
+- Role de `-m32` et `-m64`
 
-On affiche le dernier chiffre d un nombre aleatoire et un message associe.
+## 4) Regles obligatoires
 
-A retenir:
-- Le dernier chiffre se recupere avec `% 10`.
-- Les phrases doivent correspondre exactement a l enonce.
+- Ubuntu 20.04
+- Compilation: `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- Tous les fichiers finissent par une nouvelle ligne
+- README obligatoire dans le dossier projet
+- Pas de warning, pas d erreur
+- `system` interdit
+- Style Betty obligatoire
 
-## Exercice 2 - Alphabet game
+## 5) Methode de travail complete
 
-On affiche l alphabet en minuscule.
-Contrainte: `putchar` uniquement.
+1. Lire l enonce et isoler les contraintes exactes.
+2. Choisir les variables minimales utiles.
+3. Ecrire une logique claire avec `if/else` et `while`.
+4. Respecter strictement la sortie attendue.
+5. Compiler en mode strict.
+6. Tester le resultat.
+7. Passer Betty et Betty-doc.
+8. Commit et push apres validation.
 
-A retenir:
-- Une boucle `for` permet de parcourir `'a'` a `'z'`.
-- Respect strict du nombre d utilisations de `putchar`.
+## 6) Exercices realises
 
-## Exercice 3 - alphABET
+### Exercice 0 - `0-positive_or_negative.c`
 
-On affiche alphabet minuscule puis majuscule.
-Contrainte: `putchar` uniquement.
+- Determiner si un nombre est positif, nul ou negatif.
+- Utilisation de conditions comparees a 0.
 
-A retenir:
-- Deux boucles pour deux plages de caracteres.
-- Nouvelle ligne a la fin.
+### Exercice 1 - `1-last_digit.c`
 
-## Exercice 4 - alphabet soup
+- Extraire le dernier chiffre avec `% 10`.
+- Afficher le bon message selon la valeur du dernier chiffre.
 
-On affiche l alphabet en minuscule sans `e` et `q`.
+### Exercice 2 - `2-print_alphabet.c`
 
-A retenir:
-- Filtrer avec `if (c != 'e' && c != 'q')`.
-- Sortie exacte sans caracteres interdits.
+- Afficher `a` a `z` avec `putchar`.
+- Boucle `while` croissante sur les caracteres.
 
-## Exercice 5 - Numbers
+### Exercice 3 - `3-print_alphabets.c`
 
-On affiche tous les chiffres de `0` a `9`.
+- Afficher alphabet minuscule puis majuscule.
+- Deux boucles `while` successives.
 
-A retenir:
-- Parcours simple avec boucle croissante.
-- Finir par `\n`.
+### Exercice 4 - `4-print_alphabt.c`
 
-## Exercice 6 - Numberz
+- Afficher `a` a `z` en excluant `e` et `q`.
+- Filtrage via condition logique.
 
-On affiche aussi `0` a `9`, mais sans variable `char` et avec `putchar` uniquement.
+### Exercice 5 - `5-print_numbers.c`
 
-A retenir:
-- Conversion entier vers caractere: `n + '0'`.
-- Respect strict des contraintes de type.
+- Afficher les chiffres `0` a `9`.
+- Boucle `while` sur entier et affichage `printf`.
 
-## Exercice 7 - Smile in the mirror
+### Exercice 6 - `6-print_numberz.c`
 
-On affiche l alphabet minuscule en ordre inverse.
+- Afficher `0` a `9` avec `putchar`.
+- Conversion entier vers caractere avec `n + '0'`.
 
-A retenir:
-- Boucle decroissante de `'z'` vers `'a'`.
+### Exercice 7 - `7-print_tebahpla.c`
 
-## Exercice 8 - Hexadecimal
+- Afficher l alphabet inverse `z` vers `a`.
+- Boucle `while` decroissante.
 
-On affiche les caracteres hexadecimal en minuscule: `0..9` puis `a..f`.
+### Exercice 8 - `8-print_base16.c`
 
-A retenir:
-- Combiner une boucle numerique et une boucle alphabetique.
+- Afficher base16 minuscule: `0-9` puis `a-f`.
+- Deux boucles `while`.
 
-## Exercice 9 - Patience, persistence and perspiration...
+### Exercice 9 - `9-print_comb.c`
 
-On affiche `0, 1, 2, ... 9`.
+- Afficher `0, 1, 2, ... 9`.
+- Eviter la virgule finale avec une condition sur le dernier element.
 
-A retenir:
-- Ajouter `, ` seulement si ce n est pas le dernier chiffre.
-- Eviter le separateur final.
+## 7) Commandes utilisees
 
-## Fonctions et notions vues
+### Compilation stricte
 
-Fonctions:
-- `printf`
-- `putchar`
-- `rand`
-- `srand`
-- `time`
-- `main`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/0-positive_or_negative.c -o 0-positive_or_negative`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/1-last_digit.c -o 1-last_digit`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/2-print_alphabet.c -o 2-print_alphabet`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/3-print_alphabets.c -o 3-print_alphabets`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/4-print_alphabt.c -o 4-print_alphabt`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/5-print_numbers.c -o 5-print_numbers`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/6-print_numberz.c -o 6-print_numberz`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/7-print_tebahpla.c -o 7-print_tebahpla`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/8-print_base16.c -o 8-print_base16`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 variables_if_else_while/9-print_comb.c -o 9-print_comb`
 
-Notions:
-- modulo `%`
-- comparaison et branchements
-- boucles croissantes/decroissantes
-- format de sortie exact
+### Execution
 
-## Commandes utilisees
+- `./0-positive_or_negative`
+- `./1-last_digit`
+- `./2-print_alphabet`
+- `./3-print_alphabets`
+- `./4-print_alphabt`
+- `./5-print_numbers`
+- `./6-print_numberz`
+- `./7-print_tebahpla`
+- `./8-print_base16`
+- `./9-print_comb`
 
-```bash
-# Compilation
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-positive_or_negative.c -o 0-positive_or_negative
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-last_digit.c -o 1-last_digit
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-print_alphabets.c -o 3-print_alphabets
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-print_alphabt.c -o 4-print_alphabt
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-print_numbers.c -o 5-print_numbers
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_numberz.c -o 6-print_numberz
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-print_base16.c -o 8-print_base16
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-print_comb.c -o 9-print_comb
+### Style
 
-# Execution
-./0-positive_or_negative
-./1-last_digit
-./2-print_alphabet
-./3-print_alphabets
-./4-print_alphabt
-./5-print_numbers
-./6-print_numberz
-./7-print_tebahpla
-./8-print_base16
-./9-print_comb
+- `betty variables_if_else_while/*.c`
+- `betty-doc variables_if_else_while/*.c`
 
-# Style
-betty 0-positive_or_negative.c 1-last_digit.c 2-print_alphabet.c 3-print_alphabets.c 4-print_alphabt.c 5-print_numbers.c 6-print_numberz.c 7-print_tebahpla.c 8-print_base16.c 9-print_comb.c
-betty-doc 0-positive_or_negative.c 1-last_digit.c 2-print_alphabet.c 3-print_alphabets.c 4-print_alphabt.c 5-print_numbers.c 6-print_numberz.c 7-print_tebahpla.c 8-print_base16.c 9-print_comb.c
-```
+## 8) Fonctions et procedes utilises
 
-## Methode simple pour reussir
+- `printf` pour affichage formate
+- `putchar` pour affichage caractere par caractere
+- `rand`, `srand`, `time` pour la partie aleatoire
+- operateurs `%`, `+`, `-`, comparaisons et operateurs logiques
+- conditions `if`, `if...else`
+- boucles `while`
 
-1. Lire l enonce avant de coder.
-2. Respecter strictement les contraintes.
-3. Compiler et tester tout de suite.
-4. Verifier Betty et Betty-doc.
-5. Commit et push apres chaque exercice.
+## 9) Checklist finale
 
-## Conclusion
-
-Ce projet renforce la logique en C et la rigueur sur les consignes.
-Une methode stricte et repetitive permet de produire des solutions propres.
+- Sortie exactement conforme aux enonces
+- Contraintes de fonctions respectees
+- Aucune fonction interdite
+- Zero warning a la compilation
+- Betty et Betty-doc valides

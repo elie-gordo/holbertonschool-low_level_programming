@@ -1,150 +1,198 @@
 # C - Functions, nested loops
 
-## Introduction
+## 1) But du projet
 
-Ce dossier contient les exercices pour pratiquer les fonctions et les boucles imbriquees en C.
-L objectif est d ecrire des fonctions propres avec des prototypes, un header central et une sortie exacte.
+Ce projet apprend a construire des fonctions propres en C et a utiliser les boucles imbriquees.
+Le point central est la separation declaration/definition, l usage du header `main.h`, et le respect strict des contraintes de sortie.
 
-## Exercice 0 - _putchar
+## 2) Ressources couvertes
 
-On ecrit un programme qui affiche `_putchar` suivi d une nouvelle ligne.
+- Nested while loops
+- C - Functions
+- Learning to Program in C (Part 06) jusqu a 14:00
+- What is a function prototype
+- What is the purpose of a function prototype?
+- C - Header Files (avant Once-Only Headers)
 
-A retenir:
-- Utiliser uniquement `_putchar`.
-- Retourner `0` dans `main`.
+## 3) Objectifs appris
 
-## Exercice 1 - I sometimes suffer from insomnia...
+- Ce qu est une boucle imbriquee et comment l utiliser
+- Ce qu est une fonction et comment l appeler
+- Difference entre declaration et definition
+- Ce qu est un prototype
+- Scope des variables
+- Signification des flags GCC `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- Role des headers et de `#include`
 
-On ecrit `print_alphabet` qui affiche l alphabet en minuscule.
+## 4) Regles obligatoires
 
-A retenir:
-- Prototype: `void print_alphabet(void);`
-- Respect de la contrainte sur `_putchar`.
+- Ubuntu 20.04
+- Compilation: `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- Tous les fichiers finissent par une nouvelle ligne
+- README obligatoire dans le dossier du projet
+- Style Betty obligatoire
+- Variables globales interdites
+- Maximum 5 fonctions par fichier
+- Bibliotheque standard interdite dans ce projet
+- `_putchar` autorise
+- Tous les prototypes dans `main.h`
+- `main.h` doit etre pousse
 
-## Exercice 2 - 10 x alphabet
+## 5) Architecture du projet
 
-On ecrit `print_alphabet_x10` qui affiche 10 fois l alphabet.
+Fichiers presents:
 
-A retenir:
-- Boucles imbriquees simples.
-- Nouvelle ligne a chaque alphabet.
+- `0-putchar.c`
+- `1-alphabet.c`
+- `2-print_alphabet_x10.c`
+- `3-islower.c`
+- `4-isalpha.c`
+- `5-sign.c`
+- `6-abs.c`
+- `7-print_last_digit.c`
+- `8-24_hours.c`
+- `9-times_table.c`
+- `10-add.c`
+- `11-print_to_98.c`
+- `main.h`
 
-## Exercice 3 - islower
+Prototypes centralises dans `main.h`:
 
-On ecrit `_islower` qui verifie si un caractere est minuscule.
+- `int _putchar(char c);`
+- `void print_alphabet(void);`
+- `void print_alphabet_x10(void);`
+- `int _islower(int c);`
+- `int _isalpha(int c);`
+- `int print_sign(int n);`
+- `int _abs(int n);`
+- `int print_last_digit(int n);`
+- `void jack_bauer(void);`
+- `void times_table(void);`
+- `int add(int a, int b);`
+- `void print_to_98(int n);`
 
-A retenir:
-- Retour `1` si minuscule, sinon `0`.
-- Verification sur l intervalle `'a'` a `'z'`.
+## 6) Methode de travail complete
 
-## Exercice 4 - isalpha
+1. Lire l enonce et le prototype cible.
+2. Ajouter/valider le prototype dans `main.h`.
+3. Ecrire la fonction avec une logique simple et testable.
+4. Respecter strictement le format de sortie demande.
+5. Compiler avec les flags imposes.
+6. Lancer des tests avec un `main.c` local de verification.
+7. Verifier le style Betty et Betty-doc.
+8. Commit et push une fois valide.
 
-On ecrit `_isalpha` qui verifie si un caractere est alphabetique.
+## 7) Exercices realises
 
-A retenir:
-- Support minuscule et majuscule.
-- Retour `1` ou `0` selon le cas.
+### Exercice 0 - `0-putchar.c`
 
-## Exercice 5 - Sign
+- Affiche `_putchar` puis nouvelle ligne.
+- Utilise `_putchar` uniquement.
 
-On ecrit `print_sign` qui affiche le signe d un entier.
+### Exercice 1 - `1-alphabet.c`
 
-A retenir:
-- `+` pour positif, `0` pour zero, `-` pour negatif.
-- Retour associe: `1`, `0`, `-1`.
+- Fonction `print_alphabet`.
+- Affiche `a` a `z` puis nouvelle ligne.
 
-## Exercice 6 - There is no such thing as absolute value...
+### Exercice 2 - `2-print_alphabet_x10.c`
 
-On ecrit `_abs` qui retourne la valeur absolue d un entier.
+- Fonction `print_alphabet_x10`.
+- Affiche 10 alphabets en utilisant des boucles imbriquees.
 
-A retenir:
-- Si `n < 0`, retourner `-n`.
-- Sinon retourner `n`.
+### Exercice 3 - `3-islower.c`
 
-## Exercice 7 - There are only 3 colors...
+- Fonction `_islower`.
+- Retourne `1` pour minuscule, sinon `0`.
 
-On ecrit `print_last_digit` qui affiche et retourne le dernier chiffre.
+### Exercice 4 - `4-isalpha.c`
 
-A retenir:
-- Gerer correctement les nombres negatifs.
-- Retourner la valeur du dernier chiffre.
+- Fonction `_isalpha`.
+- Retourne `1` pour lettre, sinon `0`.
 
-## Exercice 8 - I m federal agent Jack Bauer...
+### Exercice 5 - `5-sign.c`
 
-On ecrit `jack_bauer` qui affiche chaque minute de `00:00` a `23:59`.
+- Fonction `print_sign`.
+- Affiche `+`, `0`, ou `-` et retourne `1`, `0`, ou `-1`.
 
-A retenir:
-- Boucles heures/minutes.
-- Format de sortie strict `HH:MM`.
+### Exercice 6 - `6-abs.c`
 
-## Exercice 9 - Learn your times table
+- Fonction `_abs`.
+- Retourne la valeur absolue d un entier.
 
-On ecrit `times_table` qui affiche la table de 9.
+### Exercice 7 - `7-print_last_digit.c`
 
-A retenir:
-- Alignement exact avec espaces et virgules.
-- Sortie conforme au format de l enonce.
+- Fonction `print_last_digit`.
+- Affiche et retourne le dernier chiffre.
 
-## Exercice 10 - a + b
+### Exercice 8 - `8-24_hours.c`
 
-On ecrit `add` qui additionne deux entiers.
+- Fonction `jack_bauer`.
+- Affiche toutes les minutes de `00:00` a `23:59`.
 
-A retenir:
-- Prototype: `int add(int, int);`
-- Retour simple de la somme.
+### Exercice 9 - `9-times_table.c`
 
-## Exercice 11 - 98 Battery Street, the OG
+- Fonction `times_table`.
+- Affiche la table de 9 avec formatage exact.
 
-On ecrit `print_to_98` qui affiche les nombres de `n` jusqu a `98`.
+### Exercice 10 - `10-add.c`
 
-A retenir:
-- Monter ou descendre selon la valeur de `n`.
-- Separateur exact `, ` et fin sur `98`.
+- Fonction `add`.
+- Retourne la somme de deux entiers.
 
-## Fonctions et notions vues
+### Exercice 11 - `11-print_to_98.c`
 
-Fonctions:
-- `_putchar`
-- `printf`
-- `main`
-- fonctions custom du projet (`print_alphabet`, `_islower`, `times_table`, etc.)
+- Fonction `print_to_98`.
+- Affiche de `n` vers `98` en montant ou descendant.
 
-Notions:
-- fonctions et prototypes
-- declaration vs definition
-- header file `main.h`
-- boucles `while` et boucles imbriquees
-- format de sortie strict
+## 8) Commandes utilisees
 
-## Commandes utilisees
+### Compilation type d un test local
 
-```bash
-# Compilation typique d un exercice
-# Exemple exo 9
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 9-main.c 9-times_table.c -o 9-times_table
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 0-main.c 0-putchar.c -o 0-putchar-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 1-main.c 1-alphabet.c -o 1-alphabet-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet-x10-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 3-main.c 3-islower.c -o 3-islower-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 4-main.c 4-isalpha.c -o 4-isalpha-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 5-main.c 5-sign.c -o 5-sign-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 6-main.c 6-abs.c -o 6-abs-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 7-main.c 7-print_last_digit.c -o 7-last-digit-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 8-main.c 8-24_hours.c -o 8-24h-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 9-main.c 9-times_table.c -o 9-times-table-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 10-main.c 10-add.c -o 10-add-test`
+- `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 11-main.c 11-print_to_98.c -o 11-to-98-test`
 
-# Exemple exo 11
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 11-main.c 11-print_to_98.c -o 11-98
+### Execution
 
-# Execution
-./9-times_table
-./11-98
+- `./0-putchar-test`
+- `./1-alphabet-test`
+- `./2-alphabet-x10-test`
+- `./3-islower-test`
+- `./4-isalpha-test`
+- `./5-sign-test`
+- `./6-abs-test`
+- `./7-last-digit-test`
+- `./8-24h-test`
+- `./9-times-table-test`
+- `./10-add-test`
+- `./11-to-98-test`
 
-# Style
-betty 0-putchar.c 1-alphabet.c 2-print_alphabet_x10.c 3-islower.c 4-isalpha.c 5-sign.c 6-abs.c 7-print_last_digit.c 8-24_hours.c 9-times_table.c 10-add.c 11-print_to_98.c main.h
-betty-doc 0-putchar.c 1-alphabet.c 2-print_alphabet_x10.c 3-islower.c 4-isalpha.c 5-sign.c 6-abs.c 7-print_last_digit.c 8-24_hours.c 9-times_table.c 10-add.c 11-print_to_98.c
-```
+### Style
 
-## Methode simple pour reussir
+- `betty functions_nested_loops/*.c functions_nested_loops/main.h`
+- `betty-doc functions_nested_loops/*.c`
 
-1. Lire l enonce et les contraintes mot a mot.
-2. Ecrire une solution minimale et conforme.
-3. Compiler avec les flags imposes.
-4. Tester la sortie exactement.
-5. Verifier Betty et Betty-doc.
-6. Commit et push apres chaque exercice.
+## 9) Fonctions et procedes utilises
 
-## Conclusion
+- `_putchar` pour afficher sans `printf`/`puts`
+- fonctions unitaires de logique (`_islower`, `_isalpha`, `_abs`, `add`)
+- fonctions d affichage formate par caractere (`times_table`, `jack_bauer`)
+- prototypes dans le header `main.h`
+- inclusion via `#include "main.h"`
 
-Ce projet installe les bases des fonctions en C avec rigueur.
-La repetition des checks (compilation, sortie, style) garantit des solutions propres et valides.
+## 10) Checklist finale
+
+- Prototypes coherents entre `main.h` et `.c`
+- Pas de variable globale
+- Maximum 5 fonctions par fichier
+- Sortie exacte selon enonce
+- Compilation et style conformes
