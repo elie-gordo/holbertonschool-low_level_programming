@@ -10,10 +10,18 @@ int main(void)
 	int n;
 	char c;
 
-	for (n = 0; n < 10; n++)
+	n = 0;
+	while (n < 10)
+	{
 		putchar(n + '0');
-	for (c = 'a'; c <= 'f'; c++)
+		n++;
+	}
+	c = 'a';
+	while (c <= 'f')
+	{
 		putchar(c);
+		c++;
+	}
 	putchar('\n');
 
 	return (0);
