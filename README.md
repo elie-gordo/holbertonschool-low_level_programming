@@ -21,11 +21,6 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - sorties formatees strictes (`times_table`, `jack_bauer`, `print_to_98`)
   - verification constante de la compilation et du style Betty
 
-- Projet `intro_debugging`:
-  - correction de bugs logiques sans changer les interfaces imposees
-  - tracage pas a pas pour suivre l etat des variables dans les boucles
-  - verification stricte de la sortie exacte attendue
-
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
