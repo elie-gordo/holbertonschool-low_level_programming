@@ -1,108 +1,75 @@
-Variables, if, else, while - Introduction aux conditions et boucles en C
+# C - Variables, if, else, while
 
-Ce dossier contient les exercices du projet 2 pour pratiquer les variables, les conditions et les boucles.
-L objectif est d ecrire des programmes simples en respectant strictement les contraintes de chaque enonce.
+## Objectif
 
-Exercice 0 - Positive anything is better than negative nothing
+Ce projet sert a maitriser:
+- les variables et operations de base
+- les conditions `if`, `else if`, `else`
+- les boucles `for`
+- l affichage avec `putchar` et `printf`
 
-On complete un programme qui genere un nombre aleatoire et on affiche s il est positif, negatif ou nul.
-Il faut garder le code impose pour la generation du nombre.
+## Ce qu on a appris
 
-A retenir:
-Une condition doit couvrir tous les cas: positif, zero et negatif.
-Le format de sortie doit etre exact.
+- Tester plusieurs cas logiques (positif, negatif, zero).
+- Extraire le dernier chiffre avec `% 10`.
+- Parcourir alphabet et chiffres avec des boucles.
+- Convertir un entier en caractere avec `n + '0'`.
+- Respecter des contraintes strictes (ex: seulement `putchar`, pas de `char`, nombre max d appels).
 
-Exercice 1 - The last digit
+## Fonctions et notions vues
 
-On affiche le dernier chiffre d un nombre aleatoire et un message selon sa valeur.
-Le message change si le dernier chiffre est superieur a 5, egal a 0, ou inferieur a 6 et non nul.
+- Fonctions: `printf`, `putchar`, `rand`, `srand`, `time`, `main`.
+- Notions: modulo, comparaison, branchements, boucles croissantes/decroissantes, format de sortie exact.
 
-A retenir:
-Le dernier chiffre se recupere avec l operateur modulo.
-Il faut respecter exactement les phrases demandees.
+## Commandes utilisees
 
-Exercice 2 - I sometimes suffer from insomnia. And when I can t fall asleep, I play what I call the alphabet game
+```bash
+# Compilation des exercices
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-positive_or_negative.c -o 0-positive_or_negative
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-last_digit.c -o 1-last_digit
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-print_alphabet.c -o 2-print_alphabet
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-print_alphabets.c -o 3-print_alphabets
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-print_alphabt.c -o 4-print_alphabt
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-print_numbers.c -o 5-print_numbers
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_numberz.c -o 6-print_numberz
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-print_base16.c -o 8-print_base16
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-print_comb.c -o 9-print_comb
 
-On affiche l alphabet en minuscules, puis une nouvelle ligne.
-Seule la fonction putchar est autorisee, avec une limite sur son utilisation dans le code.
+# Execution
+./0-positive_or_negative
+./1-last_digit
+./2-print_alphabet
+./3-print_alphabets
+./4-print_alphabt
+./5-print_numbers
+./6-print_numberz
+./7-print_tebahpla
+./8-print_base16
+./9-print_comb
 
-A retenir:
-Une boucle permet d afficher une suite de caracteres proprement.
-Il faut respecter les restrictions de fonctions.
+# Style
+betty 0-positive_or_negative.c 1-last_digit.c 2-print_alphabet.c 3-print_alphabets.c 4-print_alphabt.c 5-print_numbers.c 6-print_numberz.c 7-print_tebahpla.c 8-print_base16.c 9-print_comb.c
+betty-doc 0-positive_or_negative.c 1-last_digit.c 2-print_alphabet.c 3-print_alphabets.c 4-print_alphabt.c 5-print_numbers.c 6-print_numberz.c 7-print_tebahpla.c 8-print_base16.c 9-print_comb.c
+```
 
-Exercice 3 - alphABET
+## Exercices du dossier
 
-On affiche d abord l alphabet en minuscules puis en majuscules, puis une nouvelle ligne.
-Toujours avec putchar uniquement.
+1. `0-positive_or_negative.c`: afficher si `n` est positif, nul ou negatif.
+2. `1-last_digit.c`: afficher le dernier chiffre de `n` et le message associe.
+3. `2-print_alphabet.c`: alphabet en minuscule.
+4. `3-print_alphabets.c`: alphabet minuscule puis majuscule.
+5. `4-print_alphabt.c`: alphabet sans `e` et `q`.
+6. `5-print_numbers.c`: chiffres de `0` a `9`.
+7. `6-print_numberz.c`: chiffres avec `putchar` seulement et sans `char`.
+8. `7-print_tebahpla.c`: alphabet en ordre inverse.
+9. `8-print_base16.c`: base16 en minuscule.
+10. `9-print_comb.c`: chiffres `0` a `9` separes par `, `.
 
-A retenir:
-On peut enchainer deux boucles pour deux plages de caracteres.
-Le nombre d appels a putchar dans le code est controle.
+## Methode de travail
 
-Exercice 4 - When I was having that alphabet soup, I never thought that it would pay off
-
-On affiche l alphabet en minuscules sans les lettres e et q.
-Le programme doit rester simple et respecter les contraintes de l enonce.
-
-A retenir:
-Un if dans la boucle permet d exclure certains caracteres.
-La sortie doit etre exacte.
-
-Exercice 5 - Numbers
-
-On affiche tous les chiffres de 0 a 9, suivis d une nouvelle ligne.
-Tout le code doit etre dans main.
-
-A retenir:
-Les boucles sont la base pour afficher des sequences numeriques.
-Il faut bien terminer par un retour a la ligne.
-
-Exercice 6 - Numberz
-
-On affiche aussi les chiffres de 0 a 9, mais avec des contraintes supplementaires.
-On n a pas le droit d utiliser de variable de type char, et seule putchar est autorisee.
-
-A retenir:
-On peut convertir un entier en caractere avec + '0'.
-Les contraintes de type doivent etre respectees strictement.
-
-Exercice 7 - Smile in the mirror
-
-On affiche l alphabet en minuscules dans l ordre inverse.
-Toujours avec putchar uniquement et dans main.
-
-A retenir:
-Une boucle decroissante permet d inverser l ordre d affichage.
-Le resultat attendu doit etre exact caractere par caractere.
-
-Exercice 8 - Hexadecimal
-
-On affiche tous les caracteres de base 16 en minuscules: 0 a 9 puis a a f.
-On termine par une nouvelle ligne.
-
-A retenir:
-On combine une boucle pour les chiffres et une boucle pour les lettres.
-Le format de sortie ne doit contenir aucun separateur.
-
-Exercice 9 - Patience, persistence and perspiration make an unbeatable combination for success
-
-On affiche toutes les combinaisons de chiffres simples de 0 a 9, separees par virgule et espace.
-Le dernier chiffre ne doit pas etre suivi de separateur.
-
-A retenir:
-Il faut gerer le cas final pour eviter une virgule en trop.
-L ordre d affichage doit etre croissant.
-
-Methode simple pour reussir tous les exercices
-
-1. Lire l enonce entier avant de coder.
-2. Respecter exactement le nom de fichier demande.
-3. Respecter strictement les fonctions autorisees et interdites.
-4. Compiler avec les flags du projet.
-5. Verifier le style Betty et la documentation Betty.
-6. Faire un commit et un push apres chaque exercice.
-
-Conclusion
-
-Ce projet renforce les bases en C sur les conditions, les boucles et la rigueur.
-Si tu appliques les contraintes a la lettre et que tu testes chaque fichier, tu avances vite et proprement.
+1. Lire exactement les contraintes de chaque enonce.
+2. Ecrire un code minimal et conforme.
+3. Verifier le rendu attendu.
+4. Passer Betty et Betty-doc.
+5. Commit/push a chaque exercice.
