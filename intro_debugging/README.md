@@ -27,7 +27,16 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 - Corriger uniquement la logique necessaire
 - Soumettre le fichier `.c` corrige pour chaque exercice
 
-## 5) Methode de travail
+## 5) Architecture du dossier
+
+Fichiers presentes (numerotes par exercice):
+
+- Exercice 0 -> `sum_to_n.c`
+- Exercice 1 -> `multiplication_table.c`
+- Exercice 2 -> `row_sums.c`
+- Documentation -> `README.md`
+
+## 6) Methode de travail
 
 1. Ouvrir le code dans Python Tutor.
 2. Executer pas a pas.
@@ -38,7 +47,7 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 7. Verifier la sortie exacte.
 8. Commit et push.
 
-## 6) Exercices realises
+## 7) Exercices realises
 
 ### Exercice 0. Debugging a Counting Function - `sum_to_n.c`
 
@@ -62,7 +71,7 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 - Correction: ajouter directement chaque `row_sum` a `total`.
 - Sortie attendue: `36`
 
-## 7) Commandes de verification
+## 8) Commandes de verification
 
 - `gcc -Wall -Wextra -Werror -pedantic -std=gnu89 intro_debugging/sum_to_n.c -o sum_to_n_test`
 - `gcc -Wall -Wextra -Werror -pedantic -std=gnu89 intro_debugging/multiplication_table.c -o multiplication_table_test`
@@ -71,7 +80,7 @@ La methode imposee est le tracage pas a pas pour comprendre l execution, pas le 
 - `./multiplication_table_test`
 - `./row_sums_test`
 
-## 8) Checklist finale
+## 9) Checklist finale
 
 - `main` non modifie
 - correction logique minimale
