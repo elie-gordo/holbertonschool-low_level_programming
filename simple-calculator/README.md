@@ -3,7 +3,7 @@
 ## 1) But du projet
 
 Ce projet construit un programme C complet en terminal, avec un menu interactif.
-L exercice 0 met en place le squelette: affichage du menu et sortie avec l option `0`.
+L exercice 1 met en place une boucle de menu avec validation des choix.
 
 ## 2) Compilation
 
@@ -19,9 +19,17 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 calculator.c -o calculator
 ./calculator
 ```
 
-Exemple attendu (exercice 0):
+Exemple attendu (exercice 1):
 
 ```text
+Simple Calculator
+1) Add
+2) Subtract
+3) Multiply
+4) Divide
+0) Quit
+Choice: 9
+Invalid choice
 Simple Calculator
 1) Add
 2) Subtract
@@ -34,19 +42,20 @@ Bye!
 
 ## 4) Operations supportees
 
-- `1) Add` (affichee dans le menu, non implementee a l exercice 0)
-- `2) Subtract` (affichee dans le menu, non implementee a l exercice 0)
-- `3) Multiply` (affichee dans le menu, non implementee a l exercice 0)
-- `4) Divide` (affichee dans le menu, non implementee a l exercice 0)
+- `1) Add` (affichee dans le menu, non implementee a l exercice 1)
+- `2) Subtract` (affichee dans le menu, non implementee a l exercice 1)
+- `3) Multiply` (affichee dans le menu, non implementee a l exercice 1)
+- `4) Divide` (affichee dans le menu, non implementee a l exercice 1)
 - `0) Quit` (implementee)
 
 ## 5) Comportement numerique
 
 - Entree utilisateur lue avec `scanf("%d", &choice)` pour le choix du menu.
-- Aucune operation arithmetique n est encore executee dans l exercice 0.
+- Validation de plage: choix valide de `0` a `4`.
+- Aucune operation arithmetique n est encore executee dans l exercice 1.
 - Les notions entier/decimal pour les operandes seront traitees dans les exercices suivants.
 
 ## 6) Limitations connues
 
 - La validation robuste des entrees non numeriques n est pas geree ici.
-- Le squelette actuel se concentre uniquement sur l affichage du menu et la sortie avec `0`.
+- Les operations `+`, `-`, `*`, `/` seront ajoutees dans les exercices suivants.
