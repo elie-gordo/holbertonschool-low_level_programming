@@ -3,7 +3,7 @@
 ## 1) But du projet
 
 Ce projet construit un programme C complet en terminal, avec un menu interactif.
-L exercice 4 ajoute la multiplication sur le choix `3`.
+L exercice 5 ajoute la division securisee sur le choix `4`.
 
 ## 2) Compilation
 
@@ -19,7 +19,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 calculator.c -o calculator
 ./calculator
 ```
 
-Exemple attendu (exercice 4):
+Exemple attendu (exercice 5):
 
 ```text
 Simple Calculator
@@ -58,6 +58,26 @@ Simple Calculator
 3) Multiply
 4) Divide
 0) Quit
+Choice: 4
+A: 10
+B: 0
+Error: division by zero
+Simple Calculator
+1) Add
+2) Subtract
+3) Multiply
+4) Divide
+0) Quit
+Choice: 4
+A: 10
+B: 4
+Result: 2.5
+Simple Calculator
+1) Add
+2) Subtract
+3) Multiply
+4) Divide
+0) Quit
 Choice: 0
 Bye!
 ```
@@ -67,19 +87,19 @@ Bye!
 - `1) Add` (implementee)
 - `2) Subtract` (implementee)
 - `3) Multiply` (implementee)
-- `4) Divide` (affichee dans le menu, non implementee a l exercice 4)
+- `4) Divide` (implementee, avec protection division par zero)
 - `0) Quit` (implementee)
 
 ## 5) Comportement numerique
 
 - Entree utilisateur lue avec `scanf("%d", &choice)` pour le choix du menu.
 - Validation de plage: choix valide de `0` a `4`.
-- Pour le choix `1`, lecture de `A` et `B` avec `scanf`, puis affichage de `A + B`.
-- Pour le choix `2`, lecture de `A` et `B` avec `scanf`, puis affichage de `A - B`.
-- Pour le choix `3`, lecture de `A` et `B` avec `scanf`, puis affichage de `A * B`.
-- Le programme fonctionne en entier (`int`) pour l exercice 4.
+- Le programme utilise des operandes en decimal (`double`) pour les calculs.
+- Pour les choix `1`, `2`, `3`, lecture de `A` et `B` avec `scanf("%lf", ...)`, puis affichage de `A + B`, `A - B`, `A * B`.
+- Pour le choix `4`, si `B == 0` le programme affiche `Error: division by zero`, sinon `Result: A / B`.
+- Les resultats sont affiches avec `%g` pour un rendu compact (ex: `35`, `-15`, `42`, `2.5`).
 
 ## 6) Limitations connues
 
 - La validation robuste des entrees non numeriques n est pas geree ici.
-- L operation `/` sera ajoutee dans l exercice suivant.
+- Le projet reste volontairement simple: validation uniquement du choix menu dans la plage `0..4`.
