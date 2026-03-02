@@ -26,6 +26,16 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - tracage pas a pas pour suivre l etat des variables dans les boucles
   - verification stricte de la sortie exacte attendue
 
+- Projet `more_functions_nested_loops`:
+  - exercices avances sur fonctions et boucles imbriquees
+  - affichages stricts avec `_putchar` (lignes, diagonales, carres, triangles)
+  - introduction a un programme autonome avec `FizzBuzz`
+
+- Projet `simple-calculator`:
+  - construction d un programme C interactif complet en terminal
+  - menu en boucle, validation de choix, operations arithmetiques
+  - gestion de division par zero avec message d erreur explicite
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
