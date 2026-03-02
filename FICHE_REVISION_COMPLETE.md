@@ -4,7 +4,7 @@
 
 Cette fiche te permet de reviser **tout le repo** de facon methodique:
 
-- les 4 projets
+- les 7 projets
 - tous les exercices
 - toutes les commandes utilisees
 - chaque variable/fonction et son utilite
@@ -23,13 +23,16 @@ Structure du repo:
 - `variables_if_else_while/`
 - `functions_nested_loops/`
 - `intro_debugging/`
+- `more_functions_nested_loops/`
+- `simple-calculator/`
+- `benchmarking/`
 - `README.md` (racine)
 
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 28
-- Headers: 1 (`functions_nested_loops/main.h`)
+- Fichiers C: 41
+- Headers: 2 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`)
 
 ---
 
@@ -54,6 +57,10 @@ Sens des flags:
 - `-Werror`: transforme tous les warnings en erreurs
 - `-pedantic`: impose une stricte conformite au standard
 - `-std=gnu89`: base C89 avec extensions GNU
+
+Exception deja rencontree:
+
+- projet `benchmarking`: ajout de `-Wno-long-long` selon la consigne du sujet
 
 ### 2.3 Contraintes recurrentes
 
@@ -935,6 +942,113 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 intro_debugging/row_sums.c -o row
 
 ---
 
+## 8.1) Projet 5 - `more_functions_nested_loops`
+
+But: continuer la pratique des fonctions et des boucles, avec des sorties strictes au caractere pres.
+
+Fichiers principaux:
+
+- `0-isupper.c`
+- `1-isdigit.c`
+- `2-mul.c`
+- `3-print_numbers.c`
+- `4-print_most_numbers.c`
+- `5-more_numbers.c`
+- `6-print_line.c`
+- `7-print_diagonal.c`
+- `8-print_square.c`
+- `9-fizz_buzz.c`
+- `10-print_triangle.c`
+- `main.h`
+
+Points a retenir:
+
+- prototypes centralises dans `main.h`
+- `printf` interdit sauf exercice `9-fizz_buzz.c` (autorise par son enonce)
+- `_putchar` pour toutes les sorties de dessin/affichage
+- contraintes de sortie tres strictes (espaces, virgules, newline)
+
+Fonctions ajoutees:
+
+- `_isupper`, `_isdigit`, `mul`
+- `print_numbers`, `print_most_numbers`, `more_numbers`
+- `print_line`, `print_diagonal`, `print_square`, `print_triangle`
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c test_main.c file.c -I more_functions_nested_loops -o test
+```
+
+---
+
+## 8.2) Projet 6 - `simple-calculator`
+
+But: construire un programme C complet et interactif en terminal, avec boucle menu + operations.
+
+Fichier principal:
+
+- `calculator.c`
+
+Fonctionnement final implemente:
+
+- menu boucle tant que l utilisateur ne choisit pas `0`
+- validation de plage: `0..4`
+- `1`: addition
+- `2`: soustraction
+- `3`: multiplication
+- `4`: division avec protection division par zero
+- `0`: quitter avec `Bye!`
+
+Choix de representation:
+
+- operandes en `double`
+- affichage des resultats avec `%g`
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 simple-calculator/calculator.c -o calculator
+```
+
+---
+
+## 8.3) Projet 7 - `benchmarking`
+
+But: mesurer, comparer, et expliquer des performances de facon disciplinee.
+
+Livrables actuels:
+
+- `benchmarking/baseline_loop-metrics.md`
+- `benchmarking/comparison_algorithms-metrics.md`
+- `benchmarking/instrumentation_lab.c`
+- `benchmarking/green_efficiency_analysis.md`
+
+Regle de compilation specifique du projet:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long
+```
+
+Resultats clefs memorises:
+
+- baseline (3 runs): `0.229574`, `0.230196`, `0.235748` secondes
+- comparaison:
+  - naive moyenne: `2.789564` s
+  - single-pass moyenne: `0.000111` s
+  - naive `~25131.21x` plus lente
+
+Instrumentation imposee:
+
+- usage de `clock_t`, `clock()`, `CLOCKS_PER_SEC`
+- sortie exacte en 4 lignes:
+  - `TOTAL seconds: ...`
+  - `BUILD_DATA seconds: ...`
+  - `PROCESS seconds: ...`
+  - `REDUCE seconds: ...`
+
+---
+
 ## 9) Inventaire complet des variables (fichier par fichier)
 
 `hello_world`
@@ -980,6 +1094,38 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 intro_debugging/row_sums.c -o row
   - `row_sum(int row, int cols)` -> locales `int c`, `int sum`
   - `total_sum(int rows, int cols)` -> locales `int r`, `int total`
 
+`more_functions_nested_loops`
+
+- `0-isupper.c`: parametre `int c`
+- `1-isdigit.c`: parametre `int c`
+- `2-mul.c`: parametres `int a`, `int b`
+- `3-print_numbers.c`: locale `char c`
+- `4-print_most_numbers.c`: locale `char c`
+- `5-more_numbers.c`: locales `int line`, `int num`
+- `6-print_line.c`: parametre `int n`, locale `int i`
+- `7-print_diagonal.c`: parametre `int n`, locales `int i`, `int j`
+- `8-print_square.c`: parametre `int size`, locales `int i`, `int j`
+- `9-fizz_buzz.c`: locale `int i`
+- `10-print_triangle.c`: parametre `int size`, locales `int row`, `int space`, `int hash`
+
+`simple-calculator`
+
+- `calculator.c`:
+  - `int choice` (option menu)
+  - `double a`, `double b` (operandes)
+
+`benchmarking`
+
+- `instrumentation_lab.c`:
+  - `unsigned long checksum`
+  - `clock_t total_start`, `total_end`, `build_start`, `build_end`, `process_start`, `process_end`, `reduce_start`, `reduce_end`
+  - `double total_seconds`, `build_seconds`, `process_seconds`, `reduce_seconds`
+- fonctions internes:
+  - `next_value(unsigned int *state)` -> parametre pointeur `state`
+  - `build_dataset(void)` -> locales `unsigned int state`, `int i`
+  - `process_dataset(void)` -> locales `int i`, `int v`
+  - `reduce_checksum(void)` -> locales `unsigned long sum`, `int i`
+
 ---
 
 ## 10) Tableau recap - toutes les fonctions du repo
@@ -992,6 +1138,7 @@ Fonctions C standard:
 - `rand`: nombre pseudo-aleatoire
 - `srand`: initialise la seed
 - `time`: recupere timestamp
+- `clock`: mesure temps CPU (benchmarking)
 - `sizeof`: taille d un type/objet
 
 Fonctions du projet:
@@ -1011,19 +1158,33 @@ Fonctions du projet:
 - `print_table`: table n*n
 - `row_sum`: somme d une ligne
 - `total_sum`: somme totale de plusieurs lignes
+- `_isupper`: test caractere majuscule
+- `_isdigit`: test caractere chiffre
+- `mul`: produit de 2 entiers
+- `print_numbers`: affiche `0..9`
+- `print_most_numbers`: affiche `0..9` sauf `2` et `4`
+- `more_numbers`: affiche 10 lignes de `0..14`
+- `print_line`: affiche une ligne de `_`
+- `print_diagonal`: affiche une diagonale avec `\\`
+- `print_square`: affiche un carre avec `#`
+- `print_triangle`: affiche un triangle aligne a droite
+- `next_value`: generation pseudo-aleatoire interne (`benchmarking`)
+- `build_dataset`: construit le dataset fixe
+- `process_dataset`: transforme le dataset
+- `reduce_checksum`: calcule la reduction finale
 
 ---
 
 ## 11) Commandes shell a connaitre par coeur
 
-### 10.1 Permissions + verification scripts
+### 11.1 Permissions + verification scripts
 
 ```bash
 chmod +x hello_world/0-preprocessor hello_world/1-compiler hello_world/2-assembler hello_world/3-name
 wc -l hello_world/0-preprocessor hello_world/1-compiler hello_world/2-assembler hello_world/3-name
 ```
 
-### 10.2 Pipeline compilation C (concept)
+### 11.2 Pipeline compilation C (concept)
 
 ```bash
 gcc -E main.c -o main.i   # preprocessor
@@ -1039,33 +1200,45 @@ Equivalent shortcuts:
 - `gcc -c file.c` (jusqu a objet)
 - `gcc file.c -o prog` (compile + link)
 
-### 10.3 Compilation stricte type
+### 11.3 Compilation stricte type
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 fichier.c -o prog
 ```
 
-### 10.4 Execution
+### 11.4 Execution
 
 ```bash
 ./prog
 echo $?
 ```
 
-### 10.5 Style
+### 11.5 Style
 
 ```bash
 betty fichier.c
 betty-doc fichier.c
 ```
 
-### 10.6 Git
+### 11.6 Git
 
 ```bash
 git status
 git add .
 git commit -m "Task X done"
 git push
+```
+
+### 11.7 Projets recents
+
+```bash
+# simple-calculator
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 simple-calculator/calculator.c -o calculator
+./calculator
+
+# benchmarking (instrumentation)
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long benchmarking/instrumentation_lab.c -o instrumentation_lab
+./instrumentation_lab
 ```
 
 ---
@@ -1082,6 +1255,8 @@ git push
 8. Oublier les guards de header.
 9. Changer le `main` dans les exercices debugging (interdit).
 10. Sous-estimer l impact de `-Werror` (un warning = echec build).
+11. En `simple-calculator`, oublier la gestion `B == 0` pour la division.
+12. En `benchmarking`, ajouter des lignes de sortie non demandees (le format est strict).
 
 ---
 
@@ -1099,6 +1274,9 @@ Tu dois savoir:
 8. Expliquer comment formatter une sortie strictement (virgules, espaces, newline).
 9. Reproduire la methode de debugging pas a pas.
 10. Donner les commandes de compilation et test pour chaque projet.
+11. Expliquer l usage de `scanf` dans un menu interactif simple.
+12. Expliquer `clock_t`, `clock()` et `CLOCKS_PER_SEC` dans un benchmark.
+13. Interpreter un ratio de performance (ex: naive beaucoup plus lente que single-pass).
 
 ---
 
@@ -1130,5 +1308,7 @@ Ce repo t a fait construire:
 - les premieres fonctions C propres avec header
 - la rigueur sur la sortie exacte
 - une methode de debugging reproductible
+- la construction d un programme interactif complet
+- la lecture de mesures de performance et leur interpretation
 
 Si tu peux expliquer chaque fichier cite dans cette fiche sans regarder le code, tu maitrises le projet.
