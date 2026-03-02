@@ -36,6 +36,11 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - menu en boucle, validation de choix, operations arithmetiques
   - gestion de division par zero avec message d erreur explicite
 
+- Projet `benchmarking`:
+  - introduction aux mesures de temps d execution en C
+  - execution repetee dans le meme environnement pour comparer des runs
+  - interpretation des variations de runtime comme proxy d efficience
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
