@@ -3,7 +3,7 @@
 ## 1) But du projet
 
 Ce projet construit un programme C complet en terminal, avec un menu interactif.
-L exercice 3 ajoute la soustraction sur le choix `2`.
+L exercice 4 ajoute la multiplication sur le choix `3`.
 
 ## 2) Compilation
 
@@ -19,7 +19,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 calculator.c -o calculator
 ./calculator
 ```
 
-Exemple attendu (exercice 3):
+Exemple attendu (exercice 4):
 
 ```text
 Simple Calculator
@@ -48,6 +48,16 @@ Simple Calculator
 3) Multiply
 4) Divide
 0) Quit
+Choice: 3
+A: 7
+B: 6
+Result: 42
+Simple Calculator
+1) Add
+2) Subtract
+3) Multiply
+4) Divide
+0) Quit
 Choice: 0
 Bye!
 ```
@@ -56,8 +66,8 @@ Bye!
 
 - `1) Add` (implementee)
 - `2) Subtract` (implementee)
-- `3) Multiply` (affichee dans le menu, non implementee a l exercice 3)
-- `4) Divide` (affichee dans le menu, non implementee a l exercice 3)
+- `3) Multiply` (implementee)
+- `4) Divide` (affichee dans le menu, non implementee a l exercice 4)
 - `0) Quit` (implementee)
 
 ## 5) Comportement numerique
@@ -66,9 +76,10 @@ Bye!
 - Validation de plage: choix valide de `0` a `4`.
 - Pour le choix `1`, lecture de `A` et `B` avec `scanf`, puis affichage de `A + B`.
 - Pour le choix `2`, lecture de `A` et `B` avec `scanf`, puis affichage de `A - B`.
-- Le programme fonctionne en entier (`int`) pour l exercice 3.
+- Pour le choix `3`, lecture de `A` et `B` avec `scanf`, puis affichage de `A * B`.
+- Le programme fonctionne en entier (`int`) pour l exercice 4.
 
 ## 6) Limitations connues
 
 - La validation robuste des entrees non numeriques n est pas geree ici.
-- Les operations `*`, `/` seront ajoutees dans les exercices suivants.
+- L operation `/` sera ajoutee dans l exercice suivant.
