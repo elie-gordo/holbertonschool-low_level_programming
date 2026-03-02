@@ -55,35 +55,48 @@ int main(void)
     unsigned long checksum;
     clock_t total_start;
     clock_t total_end;
-    clock_t phase_start;
-    clock_t phase_end;
+    clock_t build_start;
+    clock_t build_end;
+    clock_t process_start;
+    clock_t process_end;
+    clock_t reduce_start;
+    clock_t reduce_end;
     double total_seconds;
     double build_seconds;
     double process_seconds;
     double reduce_seconds;
 
+    /* Students must add clock-based timing and print required lines. */
+
     total_start = clock();
 
-    phase_start = clock();
+    build_start = clock();
     build_dataset();
-    phase_end = clock();
-    build_seconds = (double)(phase_end - phase_start) / (double)CLOCKS_PER_SEC;
+    build_end = clock();
+    build_seconds = (double)(build_end - build_start) / (double)CLOCKS_PER_SEC;
 
-    phase_start = clock();
+    process_start = clock();
     process_dataset();
-    phase_end = clock();
-    process_seconds = (double)(phase_end - phase_start) / (double)CLOCKS_PER_SEC;
+    process_end = clock();
+    process_seconds = (double)(process_end - process_start) / (double)CLOCKS_PER_SEC;
 
-    phase_start = clock();
+    reduce_start = clock();
     checksum = reduce_checksum();
-    phase_end = clock();
-    reduce_seconds = (double)(phase_end - phase_start) / (double)CLOCKS_PER_SEC;
+    reduce_end = clock();
+    reduce_seconds = (double)(reduce_end - reduce_start) / (double)CLOCKS_PER_SEC;
 
     total_end = clock();
     total_seconds = (double)(total_end - total_start) / (double)CLOCKS_PER_SEC;
 
     if (checksum == 0ul)
         printf("impossible\n");
+
+    /* Required output (exact format, no extra lines):
+     * TOTAL seconds: <float>
+     * BUILD_DATA seconds: <float>
+     * PROCESS seconds: <float>
+     * REDUCE seconds: <float>
+     */
 
     printf("TOTAL seconds: %.6f\n", total_seconds);
     printf("BUILD_DATA seconds: %.6f\n", build_seconds);
