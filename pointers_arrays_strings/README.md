@@ -41,6 +41,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `3-puts.c`
 - `4-print_rev.c`
 - `5-rev_string.c`
+- `6-puts2.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -74,3 +75,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void rev_string(char *s);`
 - Effet: inverse une chaine directement en memoire.
+
+### Exercice 6 - `6-puts2.c`
+
+- Prototype: `void puts2(char *str);`
+- Effet: affiche un caractere sur deux d une chaine, puis un retour a la ligne.
