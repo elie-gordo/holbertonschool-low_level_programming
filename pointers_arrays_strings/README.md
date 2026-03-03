@@ -37,6 +37,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - `0-reset_to_98.c`
 - `1-swap.c`
+- `2-strlen.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -50,3 +51,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void swap_int(int *a, int *b);`
 - Effet: echange les valeurs de deux entiers via leurs adresses.
+
+### Exercice 2 - `2-strlen.c`
+
+- Prototype: `int _strlen(char *s);`
+- Effet: retourne la longueur d une chaine.
