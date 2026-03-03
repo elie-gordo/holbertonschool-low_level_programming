@@ -36,6 +36,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 ## 5) Fichiers actuels
 
 - `0-reset_to_98.c`
+- `1-swap.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -44,3 +45,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void reset_to_98(int *n);`
 - Effet: met la valeur pointee par `n` a `98`.
+
+### Exercice 1 - `1-swap.c`
+
+- Prototype: `void swap_int(int *a, int *b);`
+- Effet: echange les valeurs de deux entiers via leurs adresses.
