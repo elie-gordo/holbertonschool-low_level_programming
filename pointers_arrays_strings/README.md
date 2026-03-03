@@ -39,6 +39,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `1-swap.c`
 - `2-strlen.c`
 - `3-puts.c`
+- `4-print_rev.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -62,3 +63,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void _puts(char *str);`
 - Effet: affiche une chaine suivie d un retour a la ligne.
+
+### Exercice 4 - `4-print_rev.c`
+
+- Prototype: `void print_rev(char *s);`
+- Effet: affiche une chaine en ordre inverse suivie d un retour a la ligne.
