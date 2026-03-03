@@ -55,3 +55,8 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
 4. Verifier la sortie attendue.
 5. Verifier le style (`betty`, `betty-doc`).
 6. Commit apres chaque exercice.
+
+- Projet `pointers_arrays_strings`:
+  - introduction aux pointeurs, tableaux et chaines
+  - premiere manipulation de pointeur avec mise a jour d une valeur via adresse
+  - respect strict des prototypes dans `main.h`
