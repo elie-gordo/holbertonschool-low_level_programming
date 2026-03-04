@@ -47,6 +47,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `9-strcpy.c`
 - `100-atoi.c`
 - `0-strcat.c`
+- `1-strncat.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -110,3 +111,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *_strcat(char *dest, char *src);`
 - Effet: concatene `src` a la fin de `dest` puis retourne `dest`.
+
+### Exercice 1 (suite) - `1-strncat.c`
+
+- Prototype: `char *_strncat(char *dest, char *src, int n);`
+- Effet: concatene `src` a la fin de `dest` en utilisant au plus `n` octets de `src`.
