@@ -32,7 +32,7 @@ Structure du repo:
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 50
+- Fichiers C: 51
 - Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
@@ -1066,6 +1066,7 @@ Fichiers realises actuellement:
 - `7-puts_half.c`
 - `8-print_array.c`
 - `9-strcpy.c`
+- `100-atoi.c`
 - `main.h`
 
 Points a retenir:
@@ -1075,6 +1076,7 @@ Points a retenir:
 - exception de l enonce exo 8: `printf` autorise pour `print_array`
 - logique de parcours simple avec index (`while`/`for`)
 - copie de chaine avec boucle et terminaison `\0` pour `_strcpy`
+- conversion de chaine en entier avec gestion des signes pour `_atoi`
 - respecter exactement le format de sortie (virgules, espaces, newline)
 
 Commande type:
@@ -1205,6 +1207,7 @@ Fonctions du projet:
 - `print_square`: affiche un carre avec `#`
 - `print_triangle`: affiche un triangle aligne a droite
 - `_strcpy`: copie une chaine source vers destination puis retourne `dest`
+- `_atoi`: convertit une chaine en entier selon les regles du sujet
 - `next_value`: generation pseudo-aleatoire interne (`benchmarking`)
 - `build_dataset`: construit le dataset fixe
 - `process_dataset`: transforme le dataset
