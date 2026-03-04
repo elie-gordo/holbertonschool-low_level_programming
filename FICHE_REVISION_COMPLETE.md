@@ -32,7 +32,7 @@ Structure du repo:
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 54
+- Fichiers C: 55
 - Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
@@ -1070,6 +1070,7 @@ Fichiers realises actuellement:
 - `0-strcat.c`
 - `1-strncat.c`
 - `2-strncpy.c`
+- `3-strcmp.c`
 - `main.h`
 
 Points a retenir:
@@ -1083,6 +1084,7 @@ Points a retenir:
 - concatenation de chaines avec ajout en fin de `dest` pour `_strcat`
 - concatenation limitee a `n` octets de `src` pour `_strncat`
 - copie de chaine limitee a `n` octets (avec remplissage `\0`) pour `_strncpy`
+- comparaison de chaines caractere par caractere pour `_strcmp`
 - respecter exactement le format de sortie (virgules, espaces, newline)
 
 Commande type:
@@ -1215,6 +1217,7 @@ Fonctions du projet:
 - `_strcat`: concatene `src` a la fin de `dest`
 - `_strncat`: concatene au plus `n` octets de `src` a la fin de `dest`
 - `_strncpy`: copie `src` dans `dest` sur au plus `n` octets
+- `_strcmp`: compare deux chaines et retourne leur difference
 - `_strcpy`: copie une chaine source vers destination puis retourne `dest`
 - `_atoi`: convertit une chaine en entier selon les regles du sujet
 - `next_value`: generation pseudo-aleatoire interne (`benchmarking`)

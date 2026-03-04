@@ -49,6 +49,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `0-strcat.c`
 - `1-strncat.c`
 - `2-strncpy.c`
+- `3-strcmp.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -122,3 +123,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *_strncpy(char *dest, char *src, int n);`
 - Effet: copie `src` dans `dest` sur au plus `n` octets, comme `strncpy`.
+
+### Exercice 3 (suite) - `3-strcmp.c`
+
+- Prototype: `int _strcmp(char *s1, char *s2);`
+- Effet: compare deux chaines exactement comme `strcmp`.
