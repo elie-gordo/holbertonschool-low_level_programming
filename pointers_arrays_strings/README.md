@@ -43,6 +43,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `5-rev_string.c`
 - `6-puts2.c`
 - `7-puts_half.c`
+- `8-print_array.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -86,3 +87,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void puts_half(char *str);`
 - Effet: affiche la seconde moitie de la chaine, puis un retour a la ligne.
+
+### Exercice 8 - `8-print_array.c`
+
+- Prototype: `void print_array(int *a, int n);`
+- Effet: affiche `n` elements d un tableau d entiers, separes par `, `, puis un retour a la ligne.
