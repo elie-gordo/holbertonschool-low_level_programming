@@ -46,6 +46,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `8-print_array.c`
 - `9-strcpy.c`
 - `100-atoi.c`
+- `0-strcat.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -104,3 +105,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `int _atoi(char *s);`
 - Effet: convertit une chaine en entier en tenant compte des signes avant le nombre.
+
+### Exercice 0 (suite) - `0-strcat.c`
+
+- Prototype: `char *_strcat(char *dest, char *src);`
+- Effet: concatene `src` a la fin de `dest` puis retourne `dest`.
