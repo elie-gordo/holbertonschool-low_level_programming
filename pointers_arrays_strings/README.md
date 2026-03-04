@@ -51,6 +51,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `2-strncpy.c`
 - `3-strcmp.c`
 - `4-rev_array.c`
+- `5-string_toupper.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -134,3 +135,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void reverse_array(int *a, int n);`
 - Effet: inverse l ordre des elements d un tableau d entiers.
+
+### Exercice 5 (suite) - `5-string_toupper.c`
+
+- Prototype: `char *string_toupper(char *);`
+- Effet: convertit toutes les lettres minuscules d une chaine en majuscules.
