@@ -53,6 +53,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `4-rev_array.c`
 - `5-string_toupper.c`
 - `6-cap_string.c`
+- `7-leet.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -146,3 +147,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *cap_string(char *);`
 - Effet: met en majuscule la premiere lettre de chaque mot selon les separateurs imposes.
+
+### Exercice 7 (suite) - `7-leet.c`
+
+- Prototype: `char *leet(char *str);`
+- Effet: encode une chaine en 1337 selon les remplacements demandes.
