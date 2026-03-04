@@ -32,7 +32,7 @@ Structure du repo:
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 55
+- Fichiers C: 60
 - Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
@@ -1071,6 +1071,10 @@ Fichiers realises actuellement:
 - `1-strncat.c`
 - `2-strncpy.c`
 - `3-strcmp.c`
+- `4-rev_array.c`
+- `5-string_toupper.c`
+- `6-cap_string.c`
+- `7-leet.c`
 - `main.h`
 
 Points a retenir:
@@ -1085,6 +1089,10 @@ Points a retenir:
 - concatenation limitee a `n` octets de `src` pour `_strncat`
 - copie de chaine limitee a `n` octets (avec remplissage `\0`) pour `_strncpy`
 - comparaison de chaines caractere par caractere pour `_strcmp`
+- inversion d un tableau d entiers avec echange des extremites pour `reverse_array`
+- conversion des minuscules en majuscules ASCII pour `string_toupper`
+- mise en majuscule du debut de chaque mot selon separateurs imposes pour `cap_string`
+- encodage 1337 via table de correspondance pour `leet`
 - respecter exactement le format de sortie (virgules, espaces, newline)
 
 Commande type:
@@ -1218,6 +1226,10 @@ Fonctions du projet:
 - `_strncat`: concatene au plus `n` octets de `src` a la fin de `dest`
 - `_strncpy`: copie `src` dans `dest` sur au plus `n` octets
 - `_strcmp`: compare deux chaines et retourne leur difference
+- `reverse_array`: inverse un tableau d entiers en place
+- `string_toupper`: convertit les minuscules d une chaine en majuscules
+- `cap_string`: met en majuscule la premiere lettre de chaque mot
+- `leet`: encode une chaine en 1337
 - `_strcpy`: copie une chaine source vers destination puis retourne `dest`
 - `_atoi`: convertit une chaine en entier selon les regles du sujet
 - `next_value`: generation pseudo-aleatoire interne (`benchmarking`)
