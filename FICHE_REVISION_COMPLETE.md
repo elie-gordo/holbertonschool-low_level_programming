@@ -1065,6 +1065,7 @@ Fichiers realises actuellement:
 - `6-puts2.c`
 - `7-puts_half.c`
 - `8-print_array.c`
+- `9-strcpy.c`
 - `main.h`
 
 Points a retenir:
@@ -1073,6 +1074,7 @@ Points a retenir:
 - usage de `_putchar` pour les exercices d affichage de chaines
 - exception de l enonce exo 8: `printf` autorise pour `print_array`
 - logique de parcours simple avec index (`while`/`for`)
+- copie de chaine avec boucle et terminaison `\0` pour `_strcpy`
 - respecter exactement le format de sortie (virgules, espaces, newline)
 
 Commande type:
@@ -1202,6 +1204,7 @@ Fonctions du projet:
 - `print_diagonal`: affiche une diagonale avec `\\`
 - `print_square`: affiche un carre avec `#`
 - `print_triangle`: affiche un triangle aligne a droite
+- `_strcpy`: copie une chaine source vers destination puis retourne `dest`
 - `next_value`: generation pseudo-aleatoire interne (`benchmarking`)
 - `build_dataset`: construit le dataset fixe
 - `process_dataset`: transforme le dataset

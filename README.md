@@ -43,7 +43,7 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
 
 - Projet `pointers_arrays_strings`:
   - introduction aux pointeurs, tableaux et chaines de caracteres
-  - implementation progressive des fonctions imposees (`0` a `8`)
+  - implementation progressive des fonctions imposees (`0` a `9`)
   - respect strict des prototypes dans `main.h` et des contraintes du projet
 
 ## Pourquoi on l a fait comme ca
