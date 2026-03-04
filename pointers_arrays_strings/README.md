@@ -42,6 +42,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `4-print_rev.c`
 - `5-rev_string.c`
 - `6-puts2.c`
+- `7-puts_half.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -80,3 +81,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void puts2(char *str);`
 - Effet: affiche un caractere sur deux d une chaine, puis un retour a la ligne.
+
+### Exercice 7 - `7-puts_half.c`
+
+- Prototype: `void puts_half(char *str);`
+- Effet: affiche la seconde moitie de la chaine, puis un retour a la ligne.
