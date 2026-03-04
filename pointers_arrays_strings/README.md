@@ -52,6 +52,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `3-strcmp.c`
 - `4-rev_array.c`
 - `5-string_toupper.c`
+- `6-cap_string.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -140,3 +141,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *string_toupper(char *);`
 - Effet: convertit toutes les lettres minuscules d une chaine en majuscules.
+
+### Exercice 6 (suite) - `6-cap_string.c`
+
+- Prototype: `char *cap_string(char *);`
+- Effet: met en majuscule la premiere lettre de chaque mot selon les separateurs imposes.
