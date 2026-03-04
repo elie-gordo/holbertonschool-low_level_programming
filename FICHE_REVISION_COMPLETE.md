@@ -32,7 +32,7 @@ Structure du repo:
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 53
+- Fichiers C: 54
 - Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
@@ -1069,6 +1069,7 @@ Fichiers realises actuellement:
 - `100-atoi.c`
 - `0-strcat.c`
 - `1-strncat.c`
+- `2-strncpy.c`
 - `main.h`
 
 Points a retenir:
@@ -1081,6 +1082,7 @@ Points a retenir:
 - conversion de chaine en entier avec gestion des signes pour `_atoi`
 - concatenation de chaines avec ajout en fin de `dest` pour `_strcat`
 - concatenation limitee a `n` octets de `src` pour `_strncat`
+- copie de chaine limitee a `n` octets (avec remplissage `\0`) pour `_strncpy`
 - respecter exactement le format de sortie (virgules, espaces, newline)
 
 Commande type:
@@ -1212,6 +1214,7 @@ Fonctions du projet:
 - `print_triangle`: affiche un triangle aligne a droite
 - `_strcat`: concatene `src` a la fin de `dest`
 - `_strncat`: concatene au plus `n` octets de `src` a la fin de `dest`
+- `_strncpy`: copie `src` dans `dest` sur au plus `n` octets
 - `_strcpy`: copie une chaine source vers destination puis retourne `dest`
 - `_atoi`: convertit une chaine en entier selon les regles du sujet
 - `next_value`: generation pseudo-aleatoire interne (`benchmarking`)
