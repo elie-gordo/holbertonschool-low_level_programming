@@ -41,6 +41,11 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - comparaison de performances entre implementations
   - interpretation des resultats en lien avec l efficience logicielle
 
+- Projet `pointers_arrays_strings`:
+  - introduction aux pointeurs, tableaux et chaines de caracteres
+  - implementation progressive des fonctions imposees (`0` a `8`)
+  - respect strict des prototypes dans `main.h` et des contraintes du projet
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
@@ -55,8 +60,3 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
 4. Verifier la sortie attendue.
 5. Verifier le style (`betty`, `betty-doc`).
 6. Commit apres chaque exercice.
-
-- Projet `pointers_arrays_strings`:
-  - introduction aux pointeurs, tableaux et chaines
-  - premiere manipulation de pointeur avec mise a jour d une valeur via adresse
-  - respect strict des prototypes dans `main.h`

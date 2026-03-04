@@ -4,7 +4,7 @@
 
 Cette fiche te permet de reviser **tout le repo** de facon methodique:
 
-- les 7 projets
+- les 8 projets
 - tous les exercices
 - toutes les commandes utilisees
 - chaque variable/fonction et son utilite
@@ -26,13 +26,14 @@ Structure du repo:
 - `more_functions_nested_loops/`
 - `simple-calculator/`
 - `benchmarking/`
+- `pointers_arrays_strings/`
 - `README.md` (racine)
 
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 41
-- Headers: 2 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`)
+- Fichiers C: 50
+- Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
 
@@ -1046,6 +1047,39 @@ Instrumentation imposee:
   - `BUILD_DATA seconds: ...`
   - `PROCESS seconds: ...`
   - `REDUCE seconds: ...`
+
+---
+
+## 8.4) Projet 8 - `pointers_arrays_strings`
+
+But: maitriser les pointeurs, les tableaux et les chaines de caracteres en respectant des contraintes strictes.
+
+Fichiers realises actuellement:
+
+- `0-reset_to_98.c`
+- `1-swap.c`
+- `2-strlen.c`
+- `3-puts.c`
+- `4-print_rev.c`
+- `5-rev_string.c`
+- `6-puts2.c`
+- `7-puts_half.c`
+- `8-print_array.c`
+- `main.h`
+
+Points a retenir:
+
+- prototypes centralises dans `pointers_arrays_strings/main.h`
+- usage de `_putchar` pour les exercices d affichage de chaines
+- exception de l enonce exo 8: `printf` autorise pour `print_array`
+- logique de parcours simple avec index (`while`/`for`)
+- respecter exactement le format de sortie (virgules, espaces, newline)
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c pointers_arrays_strings/file.c -I . -o test
+```
 
 ---
 
