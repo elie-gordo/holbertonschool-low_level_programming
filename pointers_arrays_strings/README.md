@@ -50,6 +50,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `1-strncat.c`
 - `2-strncpy.c`
 - `3-strcmp.c`
+- `4-rev_array.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -128,3 +129,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `int _strcmp(char *s1, char *s2);`
 - Effet: compare deux chaines exactement comme `strcmp`.
+
+### Exercice 4 (suite) - `4-rev_array.c`
+
+- Prototype: `void reverse_array(int *a, int n);`
+- Effet: inverse l ordre des elements d un tableau d entiers.
