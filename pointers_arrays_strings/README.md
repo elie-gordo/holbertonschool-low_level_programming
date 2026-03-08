@@ -60,6 +60,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `3-strspn.c`
 - `4-strpbrk.c`
 - `5-strstr.c`
+- `7-print_chessboard.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -188,3 +189,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *_strstr(char *haystack, char *needle);`
 - Effet: retourne un pointeur vers la premiere occurrence de `needle` dans `haystack`, ou `NULL` si non trouve.
+
+### Exercice 6 (suite 2) - `7-print_chessboard.c`
+
+- Prototype: `void print_chessboard(char (*a)[8]);`
+- Effet: affiche un echiquier 8x8 ligne par ligne avec un retour a la ligne apres chaque ligne.
