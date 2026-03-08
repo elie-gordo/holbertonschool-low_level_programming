@@ -55,6 +55,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `6-cap_string.c`
 - `7-leet.c`
 - `0-memset.c`
+- `1-memcpy.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -158,3 +159,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *_memset(char *s, char b, unsigned int n);`
 - Effet: remplit les `n` premiers octets de la zone memoire `s` avec l octet constant `b`, puis retourne `s`.
+
+### Exercice 1 (suite 2) - `1-memcpy.c`
+
+- Prototype: `char *_memcpy(char *dest, char *src, unsigned int n);`
+- Effet: copie `n` octets de `src` vers `dest`, puis retourne `dest`.
