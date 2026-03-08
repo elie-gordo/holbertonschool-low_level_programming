@@ -20,6 +20,7 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 - `0-whatsmyname.c`
 - `1-args.c`
 - `2-args.c`
+- `3-mul.c`
 
 ## 4) Exercice realise
 
@@ -35,3 +36,8 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 ### Exercice 2 - `2-args.c`
 
 - Effet: affiche tous les arguments recus, un par ligne, y compris le nom du programme.
+
+### Exercice 3 - `3-mul.c`
+
+- Effet: multiplie deux nombres passes en arguments et affiche le resultat.
+- En cas de nombre d arguments invalide: affiche `Error` et retourne `1`.
