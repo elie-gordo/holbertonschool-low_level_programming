@@ -56,6 +56,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `7-leet.c`
 - `0-memset.c`
 - `1-memcpy.c`
+- `2-strchr.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -164,3 +165,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *_memcpy(char *dest, char *src, unsigned int n);`
 - Effet: copie `n` octets de `src` vers `dest`, puis retourne `dest`.
+
+### Exercice 2 (suite 2) - `2-strchr.c`
+
+- Prototype: `char *_strchr(char *s, char c);`
+- Effet: retourne un pointeur vers la premiere occurrence de `c` dans `s`, ou `NULL` si le caractere est absent.
