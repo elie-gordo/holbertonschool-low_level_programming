@@ -58,6 +58,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `1-memcpy.c`
 - `2-strchr.c`
 - `3-strspn.c`
+- `4-strpbrk.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -176,3 +177,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `unsigned int _strspn(char *s, char *accept);`
 - Effet: retourne la longueur du prefixe initial de `s` compose uniquement de caracteres presents dans `accept`.
+
+### Exercice 4 (suite 2) - `4-strpbrk.c`
+
+- Prototype: `char *_strpbrk(char *s, char *accept);`
+- Effet: retourne un pointeur vers la premiere occurrence dans `s` d un caractere present dans `accept`, ou `NULL` sinon.
