@@ -61,6 +61,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `4-strpbrk.c`
 - `5-strstr.c`
 - `7-print_chessboard.c`
+- `8-print_diagsums.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -194,3 +195,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `void print_chessboard(char (*a)[8]);`
 - Effet: affiche un echiquier 8x8 ligne par ligne avec un retour a la ligne apres chaque ligne.
+
+### Exercice 7 (suite 2) - `8-print_diagsums.c`
+
+- Prototype: `void print_diagsums(int *a, int size);`
+- Effet: calcule et affiche la somme des deux diagonales d une matrice carree.
