@@ -8,8 +8,8 @@
  */
 void print_diagsums(int *a, int size)
 {
-	unsigned long int d1;
-	unsigned long int d2;
+	long int d1;
+	long int d2;
 	int i;
 
 	d1 = 0;
@@ -21,5 +21,5 @@ void print_diagsums(int *a, int size)
 		d2 += a[(i * size) + (size - 1 - i)];
 	}
 
-	printf("%lu, %lu\n", d1, d2);
+	printf("%ld, %ld\n", d1, d2);
 }
