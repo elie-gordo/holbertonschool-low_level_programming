@@ -54,6 +54,7 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 - `5-string_toupper.c`
 - `6-cap_string.c`
 - `7-leet.c`
+- `0-memset.c`
 - `main.h`
 
 ## 6) Exercice realise
@@ -152,3 +153,8 @@ Chaque exercice doit respecter strictement le prototype impose et les contrainte
 
 - Prototype: `char *leet(char *str);`
 - Effet: encode une chaine en 1337 selon les remplacements demandes.
+
+### Exercice 0 (suite 2) - `0-memset.c`
+
+- Prototype: `char *_memset(char *s, char b, unsigned int n);`
+- Effet: remplit les `n` premiers octets de la zone memoire `s` avec l octet constant `b`, puis retourne `s`.
