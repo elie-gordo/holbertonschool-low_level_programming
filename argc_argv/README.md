@@ -21,6 +21,7 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 - `1-args.c`
 - `2-args.c`
 - `3-mul.c`
+- `4-add.c`
 
 ## 4) Exercice realise
 
@@ -41,3 +42,8 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 
 - Effet: multiplie deux nombres passes en arguments et affiche le resultat.
 - En cas de nombre d arguments invalide: affiche `Error` et retourne `1`.
+
+### Exercice 4 - `4-add.c`
+
+- Effet: additionne les nombres positifs passes en arguments et affiche la somme.
+- Si un argument contient un caractere non numerique: affiche `Error` et retourne `1`.
