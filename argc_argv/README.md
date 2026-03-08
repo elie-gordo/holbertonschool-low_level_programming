@@ -18,6 +18,7 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 ## 3) Fichiers actuels
 
 - `0-whatsmyname.c`
+- `1-args.c`
 
 ## 4) Exercice realise
 
@@ -25,3 +26,7 @@ Ce projet introduit l utilisation des arguments passes a `main` (`argc`, `argv`)
 
 - Effet: affiche le nom du programme suivi d un retour a la ligne.
 - Contrainte respectee: le chemin n est pas retire, le programme affiche `argv[0]`.
+
+### Exercice 1 - `1-args.c`
+
+- Effet: affiche le nombre d arguments passes au programme (sans compter le nom du programme).
