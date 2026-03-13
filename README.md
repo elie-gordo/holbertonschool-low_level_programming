@@ -46,6 +46,11 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - implementation progressive des fonctions imposees (`0` a `10`) + suite (`_strcat`, `_strncat`, `_strncpy`, `_strcmp`, `reverse_array`, `string_toupper`, `cap_string`, `leet`)
   - respect strict des prototypes dans `main.h` et des contraintes du projet
 
+- Projet `malloc_free`:
+  - introduction a l allocation dynamique avec `malloc` et a la liberation avec `free`
+  - creation de tableaux et de chaines dans une nouvelle zone memoire
+  - allocation puis liberation correcte d une grille dynamique d entiers
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
