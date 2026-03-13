@@ -51,6 +51,11 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - creation de tableaux et de chaines dans une nouvelle zone memoire
   - allocation puis liberation correcte d une grille dynamique d entiers
 
+- Projet `more_malloc_free`:
+  - allocation dynamique avec controle d echec via `exit`
+  - concatenation partielle de chaines dans une nouvelle zone memoire
+  - recreation de comportements proches de `calloc` et creation de plages d entiers
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
