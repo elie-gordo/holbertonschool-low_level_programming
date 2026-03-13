@@ -4,7 +4,7 @@
 
 Cette fiche te permet de reviser **tout le repo** de facon methodique:
 
-- les 8 projets
+- les 10 projets
 - tous les exercices
 - toutes les commandes utilisees
 - chaque variable/fonction et son utilite
@@ -27,13 +27,15 @@ Structure du repo:
 - `simple-calculator/`
 - `benchmarking/`
 - `pointers_arrays_strings/`
+- `malloc_free/`
+- `more_malloc_free/`
 - `README.md` (racine)
 
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 60
-- Headers: 3 (`functions_nested_loops/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
+- Fichiers C: 82
+- Headers: 5 (`functions_nested_loops/main.h`, `malloc_free/main.h`, `more_malloc_free/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
 
 ---
 
@@ -143,6 +145,9 @@ int main(void)
 - `putchar`
 - `rand`, `srand`, `time`
 - `sizeof`
+- `malloc`
+- `free`
+- `exit`
 
 ### 4.6 ASCII (essentiel)
 
@@ -159,6 +164,7 @@ int main(void)
 - controles: `if`, `else if`, `else`, `while`, `for`
 - retours: `return`
 - declarations de fonctions: `int f(int x)`, `void g(void)`
+- pointeurs: `*ptr`, `int **grid`, `char *str`
 - commentaires Betty:
   - bloc `/** ... */`
   - tags `@param`, `Return:`
@@ -1103,6 +1109,81 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c pointers_arrays_strin
 
 ---
 
+## 8.5) Projet 9 - `malloc_free`
+
+But: apprendre l allocation dynamique simple avec `malloc` et la liberation correcte avec `free`.
+
+Fichiers realises:
+
+- `0-create_array.c`
+- `1-strdup.c`
+- `2-str_concat.c`
+- `3-alloc_grid.c`
+- `4-free_grid.c`
+- `main.h`
+
+Points a retenir:
+
+- difference entre allocation automatique et allocation dynamique
+- `malloc` reserve une zone memoire et retourne une adresse
+- `free` libere une zone allouee dynamiquement
+- toujours tester `NULL` apres un `malloc`
+- les fonctions autorisees sont strictement `malloc` et `free`
+- quand l enonce le demande, `NULL` doit etre traite comme chaine vide
+- une grille 2D allouee ligne par ligne doit etre liberee ligne par ligne
+
+Fonctions ajoutees:
+
+- `create_array`: alloue un tableau de `char` et l initialise avec un caractere
+- `_strdup`: duplique une chaine dans une nouvelle zone memoire
+- `str_concat`: concatene deux chaines dans une nouvelle zone memoire
+- `alloc_grid`: alloue une grille d entiers initialisee a `0`
+- `free_grid`: libere une grille allouee par `alloc_grid`
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c malloc_free/file.c -I malloc_free -o test
+```
+
+---
+
+## 8.6) Projet 10 - `more_malloc_free`
+
+But: approfondir l allocation dynamique avec gestion d erreur via `exit` et recreation manuelle de comportements proches de `calloc`.
+
+Fichiers realises:
+
+- `0-malloc_checked.c`
+- `1-string_nconcat.c`
+- `2-calloc.c`
+- `3-array_range.c`
+- `main.h`
+
+Points a retenir:
+
+- `exit(98)` termine normalement le processus avec le code de sortie `98`
+- il ne faut pas caster le resultat de `malloc` en C
+- `string_nconcat` concatene `s1` avec seulement les `n` premiers octets de `s2`
+- `_calloc` est reprogramme avec `malloc` + initialisation manuelle a `0`
+- `array_range` construit un tableau contenant toutes les valeurs de `min` a `max`
+- les fonctions autorisees sont strictement `malloc`, `free` et `exit`
+
+Fonctions ajoutees:
+
+- `malloc_checked`: alloue une zone memoire ou quitte avec `98`
+- `string_nconcat`: concatene `s1` avec une partie de `s2`
+- `_calloc`: alloue puis met a zero une zone memoire
+- `array_range`: cree un tableau d entiers ordonnes de `min` a `max`
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c more_malloc_free/file.c -I more_malloc_free -o test
+```
+
+---
+
 ## 9) Inventaire complet des variables (fichier par fichier)
 
 `hello_world`
@@ -1180,6 +1261,21 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c pointers_arrays_strin
   - `process_dataset(void)` -> locales `int i`, `int v`
   - `reduce_checksum(void)` -> locales `unsigned long sum`, `int i`
 
+`malloc_free`
+
+- `0-create_array.c`: parametres `unsigned int size`, `char c`, locale `unsigned int i`, pointeur `char *array`
+- `1-strdup.c`: parametre `char *str`, locales `char *copy`, `unsigned int i`, `unsigned int length`
+- `2-str_concat.c`: parametres `char *s1`, `char *s2`, locales `char *concat`, `unsigned int i`, `unsigned int j`, `unsigned int len1`, `unsigned int len2`
+- `3-alloc_grid.c`: parametres `int width`, `int height`, locales `int **grid`, `int i`, `int j`
+- `4-free_grid.c`: parametres `int **grid`, `int height`, locale `int i`
+
+`more_malloc_free`
+
+- `0-malloc_checked.c`: parametre `unsigned int b`, locale `void *ptr`
+- `1-string_nconcat.c`: parametres `char *s1`, `char *s2`, `unsigned int n`, locales `char *concat`, `unsigned int i`, `unsigned int j`, `unsigned int len1`, `unsigned int len2`
+- `2-calloc.c`: parametres `unsigned int nmemb`, `unsigned int size`, locales `char *ptr`, `unsigned int i`
+- `3-array_range.c`: parametres `int min`, `int max`, locales `int *array`, `unsigned int i`, `unsigned int size`
+
 ---
 
 ## 10) Tableau recap - toutes les fonctions du repo
@@ -1236,6 +1332,15 @@ Fonctions du projet:
 - `build_dataset`: construit le dataset fixe
 - `process_dataset`: transforme le dataset
 - `reduce_checksum`: calcule la reduction finale
+- `create_array`: alloue un tableau de caracteres initialise
+- `_strdup`: duplique une chaine dans une nouvelle zone memoire
+- `str_concat`: concatene deux chaines dans une nouvelle zone memoire
+- `alloc_grid`: alloue une grille 2D d entiers initialisee a `0`
+- `free_grid`: libere une grille 2D
+- `malloc_checked`: alloue ou quitte avec `exit(98)`
+- `string_nconcat`: concatene `s1` avec les `n` premiers octets de `s2`
+- `_calloc`: alloue une zone memoire et la met a zero
+- `array_range`: cree une plage d entiers de `min` a `max`
 
 ---
 
@@ -1303,6 +1408,19 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 simple-calculator/calculator.c -o
 # benchmarking (instrumentation)
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long benchmarking/instrumentation_lab.c -o instrumentation_lab
 ./instrumentation_lab
+
+# malloc_free
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c malloc_free/0-create_array.c -I malloc_free -o 0-create_array-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c malloc_free/1-strdup.c -I malloc_free -o 1-strdup-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c malloc_free/2-str_concat.c -I malloc_free -o 2-str-concat-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c malloc_free/3-alloc_grid.c -I malloc_free -o 3-alloc-grid-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-main.c malloc_free/3-alloc_grid.c malloc_free/4-free_grid.c -I malloc_free -o 4-free-grid-test
+
+# more_malloc_free
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c more_malloc_free/0-malloc_checked.c -I more_malloc_free -o 0-malloc-checked-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c more_malloc_free/1-string_nconcat.c -I more_malloc_free -o 1-string-nconcat-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c more_malloc_free/2-calloc.c -I more_malloc_free -o 2-calloc-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c more_malloc_free/3-array_range.c -I more_malloc_free -o 3-array-range-test
 ```
 
 ---
@@ -1321,6 +1439,11 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long benchmarking/instr
 10. Sous-estimer l impact de `-Werror` (un warning = echec build).
 11. En `simple-calculator`, oublier la gestion `B == 0` pour la division.
 12. En `benchmarking`, ajouter des lignes de sortie non demandees (le format est strict).
+13. En allocation dynamique, oublier de tester `malloc` contre `NULL`.
+14. Oublier de liberer une grille ligne par ligne avant de liberer le tableau de pointeurs.
+15. Utiliser `calloc` ou `realloc` alors que le projet impose de reprogrammer le comportement avec `malloc`.
+16. Oublier que `NULL` doit parfois etre traite comme une chaine vide.
+17. Caster le resultat de `malloc` en C.
 
 ---
 
@@ -1341,6 +1464,11 @@ Tu dois savoir:
 11. Expliquer l usage de `scanf` dans un menu interactif simple.
 12. Expliquer `clock_t`, `clock()` et `CLOCKS_PER_SEC` dans un benchmark.
 13. Interpreter un ratio de performance (ex: naive beaucoup plus lente que single-pass).
+14. Expliquer la difference entre allocation automatique et allocation dynamique.
+15. Expliquer a quoi sert `free`.
+16. Expliquer le role de `exit(98)` dans `malloc_checked`.
+17. Ecrire une concatenation dynamique simple de chaines.
+18. Expliquer comment allouer puis liberer correctement une grille 2D.
 
 ---
 
@@ -1361,6 +1489,15 @@ R: A bloquer la compilation des qu un warning apparait, pour imposer un code pro
 Q: Pourquoi `n + '0'` marche?  
 R: Parce que les caracteres chiffres sont consecutifs en ASCII.
 
+Q: Pourquoi tester `malloc` contre `NULL`?  
+R: Parce qu une allocation peut echouer, et il faut alors retourner `NULL` ou quitter selon la consigne.
+
+Q: Difference entre allocation automatique et allocation dynamique?  
+R: L automatique vit dans la portee normale d une variable locale; la dynamique est reservee a l execution avec `malloc` et doit etre liberee avec `free`.
+
+Q: Pourquoi ne pas caster le retour de `malloc` en C?  
+R: Parce que `void *` est converti automatiquement en tout type de pointeur objet en C, et le cast peut masquer un probleme d include manquant.
+
 ---
 
 ## 15) Resume ultra court
@@ -1374,5 +1511,7 @@ Ce repo t a fait construire:
 - une methode de debugging reproductible
 - la construction d un programme interactif complet
 - la lecture de mesures de performance et leur interpretation
+- l allocation dynamique simple avec `malloc` et `free`
+- la gestion d echec d allocation et les tableaux dynamiques
 
 Si tu peux expliquer chaque fichier cite dans cette fiche sans regarder le code, tu maitrises le projet.
