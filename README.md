@@ -56,6 +56,21 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - concatenation partielle de chaines dans une nouvelle zone memoire
   - recreation de comportements proches de `calloc` et creation de plages d entiers
 
+- Projet `structures_typedef`:
+  - definition et usage de `struct dog`
+  - initialisation, affichage, allocation et liberation d une structure dynamique
+  - creation d alias de type avec `typedef`
+
+- Projet `function_pointers`:
+  - usage des pointeurs de fonctions sur chaines, tableaux et recherche conditionnelle
+  - selection dynamique d operations via table de fonctions
+  - construction d un mini calculateur modulaire
+
+- Projet `variadic_functions`:
+  - utilisation de `va_start`, `va_arg`, `va_end`
+  - fonctions variadiques pour sommes et affichages polymorphes
+  - gestion propre des cas `NULL` et formats mixtes
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances

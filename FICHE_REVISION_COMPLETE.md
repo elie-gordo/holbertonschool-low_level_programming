@@ -4,7 +4,7 @@
 
 Cette fiche te permet de reviser **tout le repo** de facon methodique:
 
-- les 10 projets
+- les 13 projets
 - tous les exercices
 - toutes les commandes utilisees
 - chaque variable/fonction et son utilite
@@ -29,13 +29,16 @@ Structure du repo:
 - `pointers_arrays_strings/`
 - `malloc_free/`
 - `more_malloc_free/`
+- `structures_typedef/`
+- `function_pointers/`
+- `variadic_functions/`
 - `README.md` (racine)
 
 Nombre total de fichiers source/executables de projet (hors `.git`):
 
 - Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 82
-- Headers: 5 (`functions_nested_loops/main.h`, `malloc_free/main.h`, `more_malloc_free/main.h`, `more_functions_nested_loops/main.h`, `pointers_arrays_strings/main.h`)
+- Fichiers C: 96
+- Headers: 9 (`function_pointers/3-calc.h`, `function_pointers/function_pointers.h`, `functions_nested_loops/main.h`, `malloc_free/main.h`, `more_functions_nested_loops/main.h`, `more_malloc_free/main.h`, `pointers_arrays_strings/main.h`, `structures_typedef/dog.h`, `variadic_functions/variadic_functions.h`)
 
 ---
 
@@ -1184,6 +1187,114 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c more_malloc_free/file
 
 ---
 
+## 8.7) Projet 11 - `structures_typedef`
+
+But: apprendre a definir des structures, creer des alias de type avec `typedef`, et gerer une structure dynamique complete.
+
+Fichiers realises:
+
+- `dog.h`
+- `1-init_dog.c`
+- `2-print_dog.c`
+- `4-new_dog.c`
+- `5-free_dog.c`
+
+Points a retenir:
+
+- `struct dog` regroupe `name`, `age`, `owner`
+- `typedef struct dog dog_t;` cree un alias pratique
+- `new_dog` alloue la structure puis copie `name` et `owner`
+- en cas d echec d allocation intermediaire, il faut liberer ce qui est deja alloue
+- `free_dog` libere `name`, `owner`, puis la structure
+
+Fonctions ajoutees:
+
+- `init_dog`: initialise une variable de type `struct dog`
+- `print_dog`: affiche les champs et gere les `NULL` avec `(nil)`
+- `new_dog`: cree une structure dynamique avec copies des chaines
+- `free_dog`: libere une structure `dog_t`
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c structures_typedef/file.c -I structures_typedef -o test
+```
+
+---
+
+## 8.8) Projet 12 - `function_pointers`
+
+But: maitriser les pointeurs de fonctions pour passer des comportements en parametre et selectionner dynamiquement des operations.
+
+Fichiers realises:
+
+- `function_pointers.h`
+- `0-print_name.c`
+- `1-array_iterator.c`
+- `2-int_index.c`
+- `3-calc.h`
+- `3-op_functions.c`
+- `3-get_op_func.c`
+- `3-main.c`
+
+Points a retenir:
+
+- un pointeur de fonction contient l adresse d une fonction executable
+- `array_iterator` applique une action sur chaque element
+- `int_index` retourne le premier index valide selon un predicat
+- `get_op_func` utilise une table `op_t` pour mapper un operateur a une fonction
+- le programme `calc` gere les erreurs avec les codes 98/99/100
+
+Fonctions ajoutees:
+
+- `print_name`: execute la fonction passee sur le nom
+- `array_iterator`: applique une fonction a chaque entier d un tableau
+- `int_index`: recherche un entier selon une fonction de comparaison
+- `op_add`, `op_sub`, `op_mul`, `op_div`, `op_mod`: operations arithmetiques
+- `get_op_func`: selectionne la bonne operation
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c 3-op_functions.c 3-get_op_func.c -I function_pointers -o calc
+```
+
+---
+
+## 8.9) Projet 13 - `variadic_functions`
+
+But: maitriser les fonctions variadiques avec `stdarg.h` (`va_start`, `va_arg`, `va_end`) et gerer des signatures flexibles.
+
+Fichiers realises:
+
+- `variadic_functions.h`
+- `0-sum_them_all.c`
+- `1-print_numbers.c`
+- `2-print_strings.c`
+- `3-print_all.c`
+
+Points a retenir:
+
+- `sum_them_all` somme un nombre variable d entiers
+- `print_numbers` gere separateur et fin de ligne
+- `print_strings` affiche `(nil)` si une chaine est `NULL`
+- `print_all` traite plusieurs types (`c`, `i`, `f`, `s`) selon un format
+- il faut toujours terminer une fonction variadique par `va_end`
+
+Fonctions ajoutees:
+
+- `sum_them_all`: somme variadique
+- `print_numbers`: affichage variadique d entiers
+- `print_strings`: affichage variadique de chaines
+- `print_all`: affichage variadique multi-types
+
+Commande type:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c variadic_functions/file.c -I variadic_functions -o test
+```
+
+---
 ## 9) Inventaire complet des variables (fichier par fichier)
 
 `hello_world`
@@ -1276,6 +1387,30 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test_main.c more_malloc_free/file
 - `2-calloc.c`: parametres `unsigned int nmemb`, `unsigned int size`, locales `char *ptr`, `unsigned int i`
 - `3-array_range.c`: parametres `int min`, `int max`, locales `int *array`, `unsigned int i`, `unsigned int size`
 
+`structures_typedef`
+
+- `1-init_dog.c`: parametres `struct dog *d`, `char *name`, `float age`, `char *owner`
+- `2-print_dog.c`: parametre `struct dog *d`
+- `4-new_dog.c`: parametres `char *name`, `float age`, `char *owner`, locales `dog_t *dog`, `unsigned int len_name`, `unsigned int len_owner`
+- `4-new_dog.c` fonctions internes: `_strlen(char *s)` -> locale `unsigned int len`; `_strcpy(char *dest, char *src)` -> locale `unsigned int i`
+- `5-free_dog.c`: parametre `dog_t *d`
+
+`function_pointers`
+
+- `0-print_name.c`: parametres `char *name`, `void (*f)(char *)`
+- `1-array_iterator.c`: parametres `int *array`, `size_t size`, `void (*action)(int)`, locale `size_t i`
+- `2-int_index.c`: parametres `int *array`, `int size`, `int (*cmp)(int)`, locale `int i`
+- `3-op_functions.c`: parametres `int a`, `int b` pour chaque operation
+- `3-get_op_func.c`: parametre `char *s`, variables `op_t ops[]`, `int i`
+- `3-main.c`: parametres `int argc`, `char *argv[]`, locale `int (*f)(int, int)`
+
+`variadic_functions`
+
+- `0-sum_them_all.c`: parametre `const unsigned int n`, locales `va_list args`, `unsigned int i`, `int sum`
+- `1-print_numbers.c`: parametres `const char *separator`, `const unsigned int n`, locales `va_list args`, `unsigned int i`
+- `2-print_strings.c`: parametres `const char *separator`, `const unsigned int n`, locales `va_list args`, `unsigned int i`, `char *str`
+- `3-print_all.c`: parametre `const char * const format`, locales `va_list args`, `unsigned int i`, `char *sep`, `char *str`, `int printed`
+
 ---
 
 ## 10) Tableau recap - toutes les fonctions du repo
@@ -1341,6 +1476,19 @@ Fonctions du projet:
 - `string_nconcat`: concatene `s1` avec les `n` premiers octets de `s2`
 - `_calloc`: alloue une zone memoire et la met a zero
 - `array_range`: cree une plage d entiers de `min` a `max`
+- `init_dog`: initialise une structure `dog`
+- `print_dog`: affiche les informations d un chien
+- `new_dog`: alloue et construit un `dog_t`
+- `free_dog`: libere un `dog_t`
+- `print_name`: applique une fonction sur un nom
+- `array_iterator`: applique une fonction a chaque element
+- `int_index`: cherche un index valide selon un predicat
+- `op_add`, `op_sub`, `op_mul`, `op_div`, `op_mod`: operations de base du calculateur
+- `get_op_func`: selection dynamique d une operation
+- `sum_them_all`: somme variadique d entiers
+- `print_numbers`: affichage variadique d entiers
+- `print_strings`: affichage variadique de chaines
+- `print_all`: affichage variadique multi-types
 
 ---
 
@@ -1421,6 +1569,24 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c more_malloc_free/0-mallo
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c more_malloc_free/1-string_nconcat.c -I more_malloc_free -o 1-string-nconcat-test
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c more_malloc_free/2-calloc.c -I more_malloc_free -o 2-calloc-test
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c more_malloc_free/3-array_range.c -I more_malloc_free -o 3-array-range-test
+
+# structures_typedef
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c structures_typedef/1-init_dog.c -I structures_typedef -o 1-init-dog-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c structures_typedef/2-print_dog.c -I structures_typedef -o 2-print-dog-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-main.c structures_typedef/4-new_dog.c -I structures_typedef -o 4-new-dog-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 5-main.c structures_typedef/5-free_dog.c structures_typedef/4-new_dog.c -I structures_typedef -o 5-free-dog-test
+
+# function_pointers
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c function_pointers/0-print_name.c -I function_pointers -o 0-print-name-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c function_pointers/1-array_iterator.c -I function_pointers -o 1-array-iterator-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c function_pointers/2-int_index.c -I function_pointers -o 2-int-index-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 function_pointers/3-main.c function_pointers/3-op_functions.c function_pointers/3-get_op_func.c -I function_pointers -o calc
+
+# variadic_functions
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c variadic_functions/0-sum_them_all.c -I variadic_functions -o 0-sum-them-all-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 1-main.c variadic_functions/1-print_numbers.c -I variadic_functions -o 1-print-numbers-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c variadic_functions/2-print_strings.c -I variadic_functions -o 2-print-strings-test
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c variadic_functions/3-print_all.c -I variadic_functions -o 3-print-all-test
 ```
 
 ---
@@ -1444,6 +1610,9 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c more_malloc_free/3-array
 15. Utiliser `calloc` ou `realloc` alors que le projet impose de reprogrammer le comportement avec `malloc`.
 16. Oublier que `NULL` doit parfois etre traite comme une chaine vide.
 17. Caster le resultat de `malloc` en C.
+18. Oublier de verifier qu un operateur est bien sur 1 seul caractere dans `get_op_func`.
+19. Oublier les codes d erreur 98/99/100 dans `calc`.
+20. Oublier `va_end` dans une fonction variadique.
 
 ---
 
@@ -1469,6 +1638,10 @@ Tu dois savoir:
 16. Expliquer le role de `exit(98)` dans `malloc_checked`.
 17. Ecrire une concatenation dynamique simple de chaines.
 18. Expliquer comment allouer puis liberer correctement une grille 2D.
+19. Expliquer `struct`, `typedef`, et la gestion memoire de `new_dog`/`free_dog`.
+20. Expliquer ce qu un pointeur de fonction contient et comment il est utilise.
+21. Expliquer les erreurs 98/99/100 du calculateur a pointeurs de fonctions.
+22. Expliquer `va_start`, `va_arg`, `va_end` avec un exemple concret.
 
 ---
 
@@ -1498,6 +1671,12 @@ R: L automatique vit dans la portee normale d une variable locale; la dynamique 
 Q: Pourquoi ne pas caster le retour de `malloc` en C?  
 R: Parce que `void *` est converti automatiquement en tout type de pointeur objet en C, et le cast peut masquer un probleme d include manquant.
 
+Q: Que contient un pointeur de fonction?  
+R: L adresse d entree d une fonction executable avec une signature precise.
+
+Q: A quoi servent `va_start`, `va_arg`, `va_end`?  
+R: A initialiser, lire et terminer proprement la lecture d arguments variadiques.
+
 ---
 
 ## 15) Resume ultra court
@@ -1513,5 +1692,8 @@ Ce repo t a fait construire:
 - la lecture de mesures de performance et leur interpretation
 - l allocation dynamique simple avec `malloc` et `free`
 - la gestion d echec d allocation et les tableaux dynamiques
+- les structures (`struct`, `typedef`) et leur cycle de vie dynamique
+- les pointeurs de fonctions et la selection dynamique de comportement
+- les fonctions variadiques avec `stdarg.h`
 
 Si tu peux expliquer chaque fichier cite dans cette fiche sans regarder le code, tu maitrises le projet.
