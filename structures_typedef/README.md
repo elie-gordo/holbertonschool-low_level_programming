@@ -22,6 +22,7 @@ Ce projet introduit les structures et le typedef en C.
 - `1-init_dog.c`
 - `2-print_dog.c`
 - `4-new_dog.c`
+- `5-free_dog.c`
 
 ## 4) Exercices realises
 
@@ -30,3 +31,4 @@ Ce projet introduit les structures et le typedef en C.
 - Exercice 2: `print_dog`
 - Exercice 3: `typedef dog_t`
 - Exercice 4: `new_dog`
+- Exercice 5: `free_dog`
