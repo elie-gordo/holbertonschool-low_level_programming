@@ -14,7 +14,7 @@ Ce projet introduit l'utilisation des pointeurs de fonctions en C.
 - Pas de variable globale
 - Maximum 5 fonctions par fichier
 - Fonctions standard autorisees: `malloc`, `free`, `exit`
-- Prototypes dans `function_pointers.h`
+- Prototypes dans `function_pointers.h` ou headers de l'exercice
 - Headers include guarded
 
 ## 3) Fichiers du projet
@@ -23,3 +23,7 @@ Ce projet introduit l'utilisation des pointeurs de fonctions en C.
 - `0-print_name.c`
 - `1-array_iterator.c`
 - `2-int_index.c`
+- `3-calc.h`
+- `3-op_functions.c`
+- `3-get_op_func.c`
+- `3-main.c`
