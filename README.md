@@ -71,6 +71,11 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - fonctions variadiques pour sommes et affichages polymorphes
   - gestion propre des cas `NULL` et formats mixtes
 
+- Projet `recursion`:
+  - introduction a la recursion sans boucles
+  - premier exercice: affichage de chaine via appels recursifs
+  - respect strict des contraintes (pas de `printf`, `_putchar` uniquement)
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
