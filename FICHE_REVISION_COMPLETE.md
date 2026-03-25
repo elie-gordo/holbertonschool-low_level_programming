@@ -4,7 +4,7 @@
 
 Cette fiche te permet de reviser **tout le repo** de facon methodique:
 
-- les 13 projets
+- les projets du repo (version evolutive)
 - tous les exercices
 - toutes les commandes utilisees
 - chaque variable/fonction et son utilite
@@ -32,13 +32,16 @@ Structure du repo:
 - `structures_typedef/`
 - `function_pointers/`
 - `variadic_functions/`
+- `argc_argv/`
+- `recursion/`
+- `ai_memory_visualizer_valgrind_tracer/`
 - `README.md` (racine)
+- `FICHE_REVISION_COMPLETE.md`
 
-Nombre total de fichiers source/executables de projet (hors `.git`):
+Note:
 
-- Scripts shell: 4 (dans `hello_world`)
-- Fichiers C: 96
-- Headers: 9 (`function_pointers/3-calc.h`, `function_pointers/function_pointers.h`, `functions_nested_loops/main.h`, `malloc_free/main.h`, `more_functions_nested_loops/main.h`, `more_malloc_free/main.h`, `pointers_arrays_strings/main.h`, `structures_typedef/dog.h`, `variadic_functions/variadic_functions.h`)
+- Le comptage exact de fichiers evolue au fil des ajouts.
+- La cartographie ci-dessus est la reference de revision par dossier.
 
 ---
 
@@ -1697,3 +1700,51 @@ Ce repo t a fait construire:
 - les fonctions variadiques avec `stdarg.h`
 
 Si tu peux expliquer chaque fichier cite dans cette fiche sans regarder le code, tu maitrises le projet.
+
+---
+
+## 16) Addendum - Projets ajoutes
+
+### 16.1 `argc_argv`
+
+Points a savoir expliquer:
+
+- role de `argc` (nombre d arguments) et `argv` (tableau de chaines)
+- parcours des arguments et affichage strict attendu
+- conversion texte -> entier (`atoi`) et gestion de cas invalides selon consigne
+
+### 16.2 `recursion`
+
+Fichiers essentiels:
+
+- `0-puts_recursion.c`
+- `1-print_rev_recursion.c`
+- `2-strlen_recursion.c`
+- `3-factorial.c`
+- `4-pow_recursion.c`
+- `5-sqrt_recursion.c`
+- `6-is_prime_number.c`
+- `main.h`
+
+Points memoire/logique:
+
+- remplacer les boucles par appels recursifs
+- identifier clairement les cas d arret
+- comprendre l empilement et le depilement des appels
+- distinguer les cas d erreur (`n < 0`) des cas valides
+
+### 16.3 `ai_memory_visualizer_valgrind_tracer`
+
+Livrables:
+
+- `analysis/memory_maps.md`
+- `analysis/valgrind_analysis.md`
+- `analysis/crash_report.md`
+
+Competences a maitriser:
+
+- distinguer stack et heap avec duree de vie explicite
+- expliquer aliasing, dangling pointer et use-after-free
+- lire Valgrind comme consequence d un etat memoire concret
+- decrire un crash par chaine causale code -> acces invalide -> SIGSEGV
+- critiquer une hypothese IA partielle/incorrecte et fournir la correction
