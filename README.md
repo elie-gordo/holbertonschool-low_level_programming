@@ -73,8 +73,13 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
 
 - Projet `recursion`:
   - introduction a la recursion sans boucles
-  - premier exercice: affichage de chaine via appels recursifs
+  - implementation des exercices 0 a 6 (affichage, longueur, factorielle, puissance, racine, primalite)
   - respect strict des contraintes (pas de `printf`, `_putchar` uniquement)
+
+- Projet `ai_memory_visualizer_valgrind_tracer`:
+  - analyse explicite stack vs heap, lifetimes et aliasing
+  - interpretation des traces Valgrind (leaks, invalid read/write, use-after-free)
+  - redaction d un crash report causal sur segmentation fault et critique des hypotheses IA
 
 ## Pourquoi on l a fait comme ca
 
