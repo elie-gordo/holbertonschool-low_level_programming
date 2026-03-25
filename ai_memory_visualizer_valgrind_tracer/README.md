@@ -12,7 +12,7 @@ Ce projet est centre sur la comprehension concrete du comportement memoire en C:
 
 ## 2) Livrables presents
 
-Conformement a la consigne de depot, le dossier garde uniquement les fichiers d analyse:
+Conformement a la consigne de depot, les fichiers requis pour soumission sont dans `analysis/`:
 
 - `analysis/memory_maps.md`
 - `analysis/valgrind_analysis.md`

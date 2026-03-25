@@ -81,6 +81,16 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - interpretation des traces Valgrind (leaks, invalid read/write, use-after-free)
   - redaction d un crash report causal sur segmentation fault et critique des hypotheses IA
 
+- Projet `dynamic_analysis`:
+  - extraction de valeurs runtime avec GDB sans modifier le code
+  - controle fin de l execution (breakpoints, etat local, moments precis)
+  - production des livrables `gdb_fundamentals.txt` et `gdb_vsc.txt` au format strict
+
+- Projet `singly_linked_lists`:
+  - construction et parcours d une liste chainee simple (`list_t`)
+  - ajout de noeuds en tete et en fin avec duplication de chaine
+  - liberation complete de la liste sans fuite memoire
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances

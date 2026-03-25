@@ -35,6 +35,8 @@ Structure du repo:
 - `argc_argv/`
 - `recursion/`
 - `ai_memory_visualizer_valgrind_tracer/`
+- `dynamic_analysis/`
+- `singly_linked_lists/`
 - `README.md` (racine)
 - `FICHE_REVISION_COMPLETE.md`
 
@@ -1748,3 +1750,35 @@ Competences a maitriser:
 - lire Valgrind comme consequence d un etat memoire concret
 - decrire un crash par chaine causale code -> acces invalide -> SIGSEGV
 - critiquer une hypothese IA partielle/incorrecte et fournir la correction
+
+### 16.4 `dynamic_analysis`
+
+Livrables:
+
+- `dynamic_analysis/gdb_fundamentals.txt`
+- `dynamic_analysis/gdb_vsc.txt`
+
+Competences a maitriser:
+
+- utilisation de GDB pour arreter l execution aux lignes cibles
+- inspection fiable des variables locales/retour avant branchement ou retour
+- extraction de valeurs au format hexadecimal strict demande
+- reproductibilite des valeurs avec input fixe (`123456`)
+
+### 16.5 `singly_linked_lists`
+
+Fichiers essentiels:
+
+- `singly_linked_lists/lists.h`
+- `singly_linked_lists/0-print_list.c`
+- `singly_linked_lists/1-list_len.c`
+- `singly_linked_lists/2-add_node.c`
+- `singly_linked_lists/3-add_node_end.c`
+- `singly_linked_lists/4-free_list.c`
+
+Competences a maitriser:
+
+- difference tableau vs liste chainee (acces indexe vs insertion flexible)
+- parcours complet d une liste avec compteur
+- insertion en tete et insertion en fin
+- gestion memoire de chaque noeud (`str` puis noeud)
