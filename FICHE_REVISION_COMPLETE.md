@@ -37,6 +37,9 @@ Structure du repo:
 - `ai_memory_visualizer_valgrind_tracer/`
 - `dynamic_analysis/`
 - `singly_linked_lists/`
+- `doubly_linked_lists/`
+- `hash_tables/`
+- `secure_data_handling/`
 - `README.md` (racine)
 - `FICHE_REVISION_COMPLETE.md`
 
@@ -1782,3 +1785,63 @@ Competences a maitriser:
 - parcours complet d une liste avec compteur
 - insertion en tete et insertion en fin
 - gestion memoire de chaque noeud (`str` puis noeud)
+
+### 16.6 `doubly_linked_lists`
+
+Fichiers essentiels:
+
+- `doubly_linked_lists/lists.h`
+- `doubly_linked_lists/0-print_dlistint.c`
+- `doubly_linked_lists/1-dlistint_len.c`
+- `doubly_linked_lists/2-add_dnodeint.c`
+- `doubly_linked_lists/3-add_dnodeint_end.c`
+- `doubly_linked_lists/4-free_dlistint.c`
+- `doubly_linked_lists/5-get_dnodeint.c`
+- `doubly_linked_lists/6-sum_dlistint.c`
+- `doubly_linked_lists/7-insert_dnodeint.c`
+- `doubly_linked_lists/8-delete_dnodeint.c`
+
+Competences a maitriser:
+
+- structure `dlistint_t` et role de `prev`/`next`
+- insertion en tete, en fin, et a index
+- suppression a index en reconnectant correctement les liens
+- parcours et liberation complete sans fuite
+- gestion des cas limites (liste vide, index hors borne)
+
+### 16.7 `hash_tables`
+
+Fichiers essentiels:
+
+- `hash_tables/hash_tables.h`
+- `hash_tables/0-hash_table_create.c`
+- `hash_tables/1-djb2.c`
+- `hash_tables/2-key_index.c`
+- `hash_tables/3-hash_table_set.c`
+- `hash_tables/4-hash_table_get.c`
+- `hash_tables/5-hash_table_print.c`
+- `hash_tables/6-hash_table_delete.c`
+
+Competences a maitriser:
+
+- difference hash function vs hash table
+- calcul d index avec `hash_djb2` puis modulo taille
+- collision handling par chainage (liste dans chaque bucket)
+- update d une cle existante vs insertion nouvelle cle
+- cycle memoire complet (`key`, `value`, node, array, table)
+
+### 16.8 `secure_data_handling`
+
+Fichiers essentiels:
+
+- `secure_data_handling/session.c`
+- `secure_data_handling/store.c`
+- `secure_data_handling/main.c` (reference CLI, non modifie)
+
+Competences a maitriser:
+
+- ownership explicite des champs (`id`, `data`)
+- securisation des failure paths (alloc partielles, doublons, echec noeud)
+- mise a jour robuste avec `realloc` via pointeur temporaire
+- difference delete-and-destroy vs delete-and-return
+- destruction globale robuste et repetitive (`store_destroy`)
