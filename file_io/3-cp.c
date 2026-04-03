@@ -65,7 +65,8 @@ static int write_all(int fd, char *buffer, ssize_t count)
  * @file_from: source file name
  * @file_to: destination file name
  */
-static void copy_content(int fd_from, int fd_to, char *file_from, char *file_to)
+static void copy_content(int fd_from, int fd_to,
+	char *file_from, char *file_to)
 {
 	ssize_t bytes_read;
 	char buffer[1024];
