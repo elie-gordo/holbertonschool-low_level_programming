@@ -40,6 +40,7 @@ Structure du repo:
 - `doubly_linked_lists/`
 - `hash_tables/`
 - `secure_data_handling/`
+- `file_io/`
 - `README.md` (racine)
 - `FICHE_REVISION_COMPLETE.md`
 
@@ -1845,3 +1846,22 @@ Competences a maitriser:
 - mise a jour robuste avec `realloc` via pointeur temporaire
 - difference delete-and-destroy vs delete-and-return
 - destruction globale robuste et repetitive (`store_destroy`)
+
+### 16.9 `file_io`
+
+Fichiers essentiels:
+
+- `file_io/main.h`
+- `file_io/0-read_textfile.c`
+- `file_io/1-create_file.c`
+- `file_io/2-append_text_to_file.c`
+- `file_io/3-cp.c`
+
+Competences a maitriser:
+
+- difference entre fonctions standard et syscalls POSIX
+- usage correct de `open`, `read`, `write`, `close`
+- gestion des flags `O_RDONLY`, `O_WRONLY`, `O_APPEND`, `O_CREAT`, `O_TRUNC`
+- permissions a la creation (`0600`, `0664`) selon l enonce
+- verification stricte des retours syscall et propagation d erreurs
+- gestion des codes de sortie specifiques dans `cp` (`97`, `98`, `99`, `100`)

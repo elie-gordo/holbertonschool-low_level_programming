@@ -91,6 +91,27 @@ Depuis le debut, ce repo a servi a construire des bases solides en C avec une me
   - ajout de noeuds en tete et en fin avec duplication de chaine
   - liberation complete de la liste sans fuite memoire
 
+- Projet `doubly_linked_lists`:
+  - manipulation d une liste doublement chainee (`prev` et `next`)
+  - insertion en tete, en fin et a index
+  - suppression a index avec reconnexion correcte des liens
+
+- Projet `hash_tables`:
+  - creation d une hash table avec chainage de collisions
+  - implementation de `djb2` et mapping `key -> index`
+  - ajout, mise a jour, lecture, affichage et destruction complete
+
+- Projet `secure_data_handling`:
+  - correction de bugs d ownership et de cycle de vie memoire
+  - durcissement des chemins d echec dans `session.c` et `store.c`
+  - securisation des operations d insertion, suppression et cleanup
+
+- Projet `file_io`:
+  - lecture de fichier vers `STDOUT` avec `open/read/write/close`
+  - creation de fichier avec permissions strictes
+  - append dans fichier existant
+  - programme `cp` avec codes d erreur 97/98/99/100
+
 ## Pourquoi on l a fait comme ca
 
 - pour apprendre les vraies bases avant les sujets plus avances
