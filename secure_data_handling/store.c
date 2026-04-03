@@ -107,15 +107,22 @@ void store_destroy(store_t *st)
 	if (!st)
 		return;
 
+	/*
+	 * Detach the list first so the store is immediately in a valid
+	 * empty state, even if cleanup is triggered repeatedly.
+	 */
 	cur = st->head;
+	st->head = NULL;
+
 	while (cur) {
 		next = cur->next;
+		cur->next = NULL;
 
 		session_destroy(cur->sess);
+		cur->sess = NULL;
 
 		free(cur);
 
 		cur = next;
 	}
-	st->head = NULL;
 }
