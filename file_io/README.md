@@ -9,6 +9,7 @@ Current completed task:
 - read a text file and print it to standard output
 - create a file and write text content to it
 - append text at the end of an existing file
+- copy the content of one file into another file
 
 ## 2) Mandatory rules
 
@@ -30,3 +31,4 @@ Current completed task:
 - `0-read_textfile.c`
 - `1-create_file.c`
 - `2-append_text_to_file.c`
+- `3-cp.c`
