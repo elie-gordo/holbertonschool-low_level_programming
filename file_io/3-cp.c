@@ -59,6 +59,38 @@ static int write_all(int fd, char *buffer, ssize_t count)
 }
 
 /**
+ * copy_content - copies data from one fd to another
+ * @fd_from: source file descriptor
+ * @fd_to: destination file descriptor
+ * @file_from: source file name
+ * @file_to: destination file name
+ */
+static void copy_content(int fd_from, int fd_to, char *file_from, char *file_to)
+{
+	ssize_t bytes_read;
+	char buffer[1024];
+
+	bytes_read = read(fd_from, buffer, 1024);
+	while (bytes_read > 0)
+	{
+		if (write_all(fd_to, buffer, bytes_read) == -1)
+		{
+			close_fd(fd_from);
+			close_fd(fd_to);
+			exit_with_error(99, file_to);
+		}
+		bytes_read = read(fd_from, buffer, 1024);
+	}
+
+	if (bytes_read == -1)
+	{
+		close_fd(fd_from);
+		close_fd(fd_to);
+		exit_with_error(98, file_from);
+	}
+}
+
+/**
  * main - copies the content of a file to another file
  * @ac: number of arguments
  * @av: arguments vector
@@ -67,9 +99,8 @@ static int write_all(int fd, char *buffer, ssize_t count)
  */
 int main(int ac, char **av)
 {
-	int fd_from, fd_to;
-	ssize_t bytes_read;
-	char buffer[1024];
+	int fd_from;
+	int fd_to;
 
 	if (ac != 3)
 		exit_with_error(97, NULL);
@@ -85,24 +116,7 @@ int main(int ac, char **av)
 		exit_with_error(99, av[2]);
 	}
 
-	bytes_read = read(fd_from, buffer, 1024);
-	while (bytes_read > 0)
-	{
-		if (write_all(fd_to, buffer, bytes_read) == -1)
-		{
-			close_fd(fd_from);
-			close_fd(fd_to);
-			exit_with_error(99, av[2]);
-		}
-		bytes_read = read(fd_from, buffer, 1024);
-	}
-
-	if (bytes_read == -1)
-	{
-		close_fd(fd_from);
-		close_fd(fd_to);
-		exit_with_error(98, av[1]);
-	}
+	copy_content(fd_from, fd_to, av[1], av[2]);
 
 	close_fd(fd_from);
 	close_fd(fd_to);
