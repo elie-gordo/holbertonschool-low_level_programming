@@ -7,6 +7,7 @@ This project introduces file descriptors and low-level I/O system calls in C.
 Current completed task:
 
 - read a text file and print it to standard output
+- create a file and write text content to it
 
 ## 2) Mandatory rules
 
@@ -26,3 +27,4 @@ Current completed task:
 
 - `main.h`
 - `0-read_textfile.c`
+- `1-create_file.c`
